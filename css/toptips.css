@@ -1,0 +1,60 @@
+#toptips {
+    text-align: left;
+    margin: auto;
+    width: 700px;
+    display: inline-block;
+    margin-right: 20px;
+    padding-bottom: 15px;
+}
+
+.top-tips-bar {
+    color: white;
+    display: block;
+    margin: 1px 0;
+    padding: 2px 10px;
+}
+
+.top-tips-bar:nth-child(-n+4) {
+    padding: 10px 10px;
+    margin: 7px 0;
+    font-size: 20px;
+}
+
+.top-tips-bar:nth-child(-n+4) .top-tips-day{
+    width: 40px;
+}
+
+.top-tips-bar div {
+    display: inline-block;
+}
+
+.top-tips-percent {padding: 0 10px;}
+
+.top-tips-day {
+    width: 30px;
+    color: lightgray;
+}
+
+.top-tips-time {
+    margin-right: 15px;
+    width: 110px;
+}
+
+.top-tips-stats {
+    float: right;
+}
+
+.top-tips-percent {
+    text-align: right;
+    width: 70px;
+    font-weight: 700;
+}
+
+#toptips .top-tips-tip {
+    width: 50px;
+    font-weight: bold;
+    text-align: center;
+    color: #4AA63B;
+    padding-right: 5px;
+}
+

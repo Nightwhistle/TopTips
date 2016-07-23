@@ -1,0 +1,26 @@
+#help-register {
+    height: 300px;
+    padding: 50px;
+    border-bottom: 2px dashed lightgray;
+    text-align: center;
+    background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/lined_paper.png);
+    color: darkblue;
+    font-family: 'Courgette';
+}
+
+#help-register h2 {
+    font-size: 70px;
+    font-weight: 700;
+}
+
+#help-register p {
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+
+#help-register a {
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+}

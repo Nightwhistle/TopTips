@@ -1,0 +1,87 @@
+[16-Aug-2015 19:21:07 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'userid' cannot be null' in /home/borisbraun/toptips.com/php/classes/Ticket.php:43
+Stack trace:
+#0 /home/borisbraun/toptips.com/php/classes/Ticket.php(43): PDOStatement->execute()
+#1 /home/borisbraun/toptips.com/php/init/ticketProcess.php(14): Ticket->ticketInsert()
+#2 {main}
+  thrown in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 43
+[16-Aug-2015 19:21:28 UTC] PHP Notice:  Undefined index: data in /home/borisbraun/toptips.com/php/init/ticketProcess.php on line 9
+[16-Aug-2015 19:21:28 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'userid' cannot be null' in /home/borisbraun/toptips.com/php/classes/Ticket.php:43
+Stack trace:
+#0 /home/borisbraun/toptips.com/php/classes/Ticket.php(43): PDOStatement->execute()
+#1 /home/borisbraun/toptips.com/php/init/ticketProcess.php(14): Ticket->ticketInsert()
+#2 {main}
+  thrown in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 43
+[16-Aug-2015 19:21:58 UTC] PHP Notice:  Undefined index: id in /home/borisbraun/toptips.com/php/init/ticketProcess.php on line 10
+[16-Aug-2015 19:21:58 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'userid' cannot be null' in /home/borisbraun/toptips.com/php/classes/Ticket.php:43
+Stack trace:
+#0 /home/borisbraun/toptips.com/php/classes/Ticket.php(43): PDOStatement->execute()
+#1 /home/borisbraun/toptips.com/php/init/ticketProcess.php(14): Ticket->ticketInsert()
+#2 {main}
+  thrown in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 43
+[16-Aug-2015 19:22:10 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'userid' cannot be null' in /home/borisbraun/toptips.com/php/classes/Ticket.php:43
+Stack trace:
+#0 /home/borisbraun/toptips.com/php/classes/Ticket.php(43): PDOStatement->execute()
+#1 /home/borisbraun/toptips.com/php/init/ticketProcess.php(14): Ticket->ticketInsert()
+#2 {main}
+  thrown in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 43
+[16-Aug-2015 19:24:24 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'userid' cannot be null' in /home/borisbraun/toptips.com/php/classes/Ticket.php:43
+Stack trace:
+#0 /home/borisbraun/toptips.com/php/classes/Ticket.php(43): PDOStatement->execute()
+#1 /home/borisbraun/toptips.com/php/init/ticketProcess.php(14): Ticket->ticketInsert()
+#2 {main}
+  thrown in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 43
+[16-Aug-2015 19:26:01 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'userid' cannot be null' in /home/borisbraun/toptips.com/php/classes/Ticket.php:43
+Stack trace:
+#0 /home/borisbraun/toptips.com/php/classes/Ticket.php(43): PDOStatement->execute()
+#1 /home/borisbraun/toptips.com/php/init/ticketProcess.php(14): Ticket->ticketInsert()
+#2 {main}
+  thrown in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 43
+[16-Aug-2015 19:27:34 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'userid' cannot be null' in /home/borisbraun/toptips.com/php/classes/Ticket.php:43
+Stack trace:
+#0 /home/borisbraun/toptips.com/php/classes/Ticket.php(43): PDOStatement->execute()
+#1 /home/borisbraun/toptips.com/php/init/ticketProcess.php(14): Ticket->ticketInsert()
+#2 {main}
+  thrown in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 43
+[16-Aug-2015 19:30:33 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'userid' cannot be null' in /home/borisbraun/toptips.com/php/classes/Ticket.php:43
+Stack trace:
+#0 /home/borisbraun/toptips.com/php/classes/Ticket.php(43): PDOStatement->execute()
+#1 /home/borisbraun/toptips.com/php/init/ticketProcess.php(14): Ticket->ticketInsert()
+#2 {main}
+  thrown in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 43
+[16-Aug-2015 19:40:35 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'userid' cannot be null' in /home/borisbraun/toptips.com/php/classes/Ticket.php:43
+Stack trace:
+#0 /home/borisbraun/toptips.com/php/classes/Ticket.php(43): PDOStatement->execute()
+#1 /home/borisbraun/toptips.com/php/init/ticketProcess.php(14): Ticket->ticketInsert()
+#2 {main}
+  thrown in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 43
+[17-Aug-2015 08:12:57 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'userid' cannot be null' in /home/borisbraun/toptips.com/php/classes/Ticket.php:43
+Stack trace:
+#0 /home/borisbraun/toptips.com/php/classes/Ticket.php(43): PDOStatement->execute()
+#1 /home/borisbraun/toptips.com/php/init/ticketProcess.php(14): Ticket->ticketInsert()
+#2 {main}
+  thrown in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 43
+[17-Aug-2015 10:42:23 UTC] PHP Strict Standards:  Only variables should be passed by reference in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 56
+[17-Aug-2015 10:42:23 UTC] PHP Strict Standards:  Only variables should be passed by reference in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 56
+[17-Aug-2015 11:43:52 UTC] PHP Strict Standards:  Only variables should be passed by reference in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 56
+[17-Aug-2015 11:43:52 UTC] PHP Strict Standards:  Only variables should be passed by reference in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 56
+[17-Aug-2015 13:34:43 UTC] PHP Notice:  Undefined index: id in /home/borisbraun/toptips.com/php/init/ticketProcess.php on line 10
+[17-Aug-2015 13:34:44 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'userid' cannot be null' in /home/borisbraun/toptips.com/php/classes/Ticket.php:43
+Stack trace:
+#0 /home/borisbraun/toptips.com/php/classes/Ticket.php(43): PDOStatement->execute()
+#1 /home/borisbraun/toptips.com/php/init/ticketProcess.php(14): Ticket->ticketInsert()
+#2 {main}
+  thrown in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 43
+[17-Aug-2015 13:50:04 UTC] PHP Notice:  Undefined index: id in /home/borisbraun/toptips.com/php/init/ticketProcess.php on line 10
+[17-Aug-2015 13:50:04 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'userid' cannot be null' in /home/borisbraun/toptips.com/php/classes/Ticket.php:43
+Stack trace:
+#0 /home/borisbraun/toptips.com/php/classes/Ticket.php(43): PDOStatement->execute()
+#1 /home/borisbraun/toptips.com/php/init/ticketProcess.php(14): Ticket->ticketInsert()
+#2 {main}
+  thrown in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 43
+[17-Aug-2015 15:32:43 UTC] PHP Notice:  Undefined index: id in /home/borisbraun/toptips.com/php/init/ticketProcess.php on line 10
+[17-Aug-2015 15:32:44 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'userid' cannot be null' in /home/borisbraun/toptips.com/php/classes/Ticket.php:43
+Stack trace:
+#0 /home/borisbraun/toptips.com/php/classes/Ticket.php(43): PDOStatement->execute()
+#1 /home/borisbraun/toptips.com/php/init/ticketProcess.php(14): Ticket->ticketInsert()
+#2 {main}
+  thrown in /home/borisbraun/toptips.com/php/classes/Ticket.php on line 43

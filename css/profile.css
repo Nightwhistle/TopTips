@@ -1,0 +1,41 @@
+#profile {
+   position: relative;
+   width: 100%;
+   margin-bottom: 5px;
+}
+
+#profile .profile-score {
+    margin: 0; padding: 0;
+    background: darkslateblue;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#profile h1 span {
+    float: right;
+    font-weight: 700;
+}
+#profile h2 {
+    display: block;
+    color: lightsteelblue;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#profile h3 {
+    display: block;
+    color: lightslategray;
+    font-size: 18px;
+    height: 20px;
+}
+
+#profile .profile-score div {
+    padding: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 150px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+}

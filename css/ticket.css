@@ -1,0 +1,231 @@
+#ticket {
+    position: fixed;
+    padding-top: 40px;
+    width: 450px;
+    left: 10px; top: 35px;
+    background: white;
+    visibility: hidden;
+    border: 1px solid lightgray;
+    box-shadow: 0 0 10px black;
+}
+
+#ticket table {
+    width: 100%;
+    table-layout: fixed;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#ticket table th {
+    padding: 3px 0;
+}
+
+#ticket .time {
+    width: 40px;
+}
+
+#ticket .tip, #ticket .odd {
+    width: 35px;
+}
+
+#ticket tbody td:nth-child(1),
+#ticket tbody td:nth-child(4),
+#ticket tbody td:nth-child(5) {
+    text-align: center;
+}
+
+#ticket td:nth-child(2), #ticket td:nth-child(3) {
+    padding-left: 5px;
+}
+
+#ticket td:nth-child(4) {
+    font-weight: bold;
+    color: green;
+}
+
+#ticket tfoot td {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 5px;
+    color: blue;
+    border-top: 1px solid gainsboro;
+}
+
+#ticket tfoot td span {
+    color: green;
+    font-weight: 900;
+    padding-left: 5px;
+}
+
+#ticket #ticket-clean {
+    position: absolute;
+    right: 0px; top: 0px;
+    padding: 0;
+    line-height: 0;
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    height: 25px;
+    width: 25px;
+    margin: 5px;
+    background: white;
+    transition: background .15s ease-in, color .15s ease-in;
+    border: none;
+}
+
+#ticket #ticket-clean:hover {
+    background: red;
+    color: white;
+}
+
+#active-tickets, #finished-tickets, #top-players-list table{
+    width: 100%;
+}
+
+#active-tickets table, #finished-tickets table {
+    margin-top: 10px;
+}
+
+#active-tickets table, #finished-tickets table {
+    table-layout: fixed;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+#active-tickets table td, #active-tickets table th, #finished-tickets table td, #finished-tickets table th {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 1px 0;
+}
+
+#active-tickets table th, #finished-tickets table th {
+    padding: 5px 0;
+}
+
+#active-tickets .hit, #finished-tickets .hit, #top-players-list .hit {
+    width: 20px;
+}
+
+#active-tickets .time, #top-players-list .time {
+    width: 40px;
+}
+
+#active-tickets .day #top-players-list .day{
+    width: 30px;
+}
+
+#active-tickets .score, #finished-tickets .score, #top-players-list .score {
+    width: 55px;
+}
+
+#active-tickets .tip, #active-tickets .odd, #finished-tickets .tip, #finished-tickets .odd, #top-players-list .tip, #top-players-list .odd {
+    width: 35px;
+}
+
+#active-tickets td:nth-child(2), #top-players-list td:nth-child(2) {
+    padding: 0;
+    color: darkslateblue;
+}
+
+#active-tickets td:nth-child(3), #top-players-list td:nth-child(3),
+#active-tickets td:nth-child(5), #top-players-list td:nth-child(5),
+#active-tickets td:nth-child(7), #top-players-list td:nth-child(7),
+#active-tickets td:nth-child(8), #top-players-list td:nth-child(8){
+    text-align: center;
+}
+
+#finished-tickets td:nth-child(3),
+#finished-tickets td:nth-child(5),
+#finished-tickets td:nth-child(6) {
+    text-align: center;
+}
+
+#active-tickets td:nth-child(4), #finished-tickets td:nth-child(2), #top-players-list td:nth-child(4) {
+    text-align: right;
+    padding-right: 5px;
+}
+
+#active-tickets td:nth-child(5), #finished-tickets td:nth-child(3), #top-players-list td:nth-child(5) {
+    color: green;
+}
+
+#active-tickets td:nth-child(6), #finished-tickets td:nth-child(4), #top-players-list td:nth-child(6) {
+    text-align: left;
+    padding-left: 5px;
+}
+
+#active-tickets td:nth-child(7), #finished-tickets td:nth-child(5), #top-players-list td:nth-child(7) {
+    font-weight: bold;
+    color: green;
+}
+
+#active-tickets tfoot, #finished-tickets tfoot, #top-players-list tfoot {
+    border-top: 1px solid gainsboro;
+}
+
+#active-tickets tfoot td, #finished-tickets tfoot td, #top-players-list tfoot td {
+    color: blue;
+    font-weight: bold;
+    text-align: right;
+}
+
+#active-tickets tfoot td:nth-child(1), #finished-tickets tfoot td:nth-child(1), #top-players-list tfoot td:nth-child(1) {
+    color: midnightblue;
+    text-align: left;
+    font-weight: 500;
+}
+#active-tickets tfoot td:nth-child(2), #finished-tickets tfoot td:nth-child(2), #top-players-list tfoot td:nth-child(2) {
+    color: midnightblue;
+    text-align: right;
+    padding-right: 5px;
+    font-weight: 700;
+}
+
+#active-tickets tfoot td:nth-child(2) span, #finished-tickets tfoot td:nth-child(2) span, #top-players-list tfoot td:nth-child(2) span{
+    color: green;
+    font-weight: 900;
+    padding-left: 5px;
+}
+
+#active-tickets .LOSE, #finished-tickets .LOSE, #top-players-list .LOSE {
+    text-align: center;
+}
+
+#active-tickets .LOSE:before, #finished-tickets .LOSE:before, #top-players-list .LOSE:before {
+    content: "X";
+    color: red;
+    font-weight: bold;
+}
+
+#active-tickets .WIN, #finished-tickets .WIN, #top-players-list .WIN {
+    text-align: center;
+    padding-right: 2px;
+}
+#active-tickets .WIN:before, #finished-tickets .WIN:before, #top-players-list .WIN:before {
+    content: "\2713";
+    color: green;
+    font-weight: bold;
+}
+
+#active-tickets td.orange-bold, #finished-tickets td.orange-bold, #top-players-list td.orange-bold {
+    color: red;
+    font-weight: bold;
+}
+
+#active-tickets td.green-bold, #finished-tickets td.green-bold, #top-players-list td.green-bold {
+    color: green;
+    font-weight: bold;
+}
+
+.ticket-share {
+    color: rgb(59,89,152);
+    display: block;
+    width: 50px;
+    text-decoration: none;
+}
+
+.ticket-share:hover {
+    font-weight: bold;
+}

@@ -1,0 +1,131 @@
+#matches {
+    table-layout: fixed;
+    width: 1100px;
+    display: inline-block;
+    margin: auto;
+}
+
+.matches-table {
+    margin-top: 10px;
+}
+
+.matches-table tr.league th{
+    background: darkslateblue;
+    color: white;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    border:none;
+    padding: 3px 10px 5px 10px;
+}
+
+#matches-table-search {
+    font-family: 'Lato';
+    position: absolute;
+    right:-15px; top:2px; bottom: 0;
+    cursor: pointer;
+    background: none;
+    background-image: url('../img/icons/search-icon.png');
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    border: none;
+    width: 30px;
+    height: 30px;
+    padding: 0px 10px 0px 40px;
+    transition: background 1s, width 1s;
+}
+
+#matches-table-search.focused {
+    right: 0; top: 0;
+    cursor: default;
+    width: 300px;
+    background: white;
+    background-image: url('../img/icons/search-icon.png');
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+}
+
+#matches-table-search:focus {
+    outline: none;
+}
+
+.matches-table th:nth-child(n+7) {
+    padding: 5px 0px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.matches-table td {
+    padding: 2px 4px;
+    font-weight: 500;
+    white-space: nowrap;
+    border-bottom: 1px solid lightgray;
+}
+
+.matches-table td:nth-child(1) {
+    padding: 2px 0;
+    color: darkslategray;
+}
+
+
+.matches-table td:nth-child(3) {
+    text-align: left;
+    padding-left: 5px;
+}
+
+.matches-table th:nth-child(3) {
+    width: 205px;
+}
+
+.matches-table td:nth-child(3) {
+    padding-left: 5px;
+    border-right: 1px solid lightgray;
+    width: 200px;
+}
+
+.matches-table th:nth-child(4) {
+    width: 200px;
+}
+
+.matches-table td:nth-child(5) {
+    color: green;
+    font-weight: 900;
+    text-align: center;
+}
+
+.matches-table td:nth-child(6) {
+    color: darkslateblue;
+    font-weight: 700;
+    text-align: right;
+}
+
+.matches-table th:nth-child(n+4) {
+    text-align: center;
+    min-width: 30px;
+}
+
+.matches-table th:nth-child(6) {
+    width: 45px;
+}
+
+.matches-table td:nth-child(n+7):hover {
+    background: rgba(0,150,255,.4);
+    cursor: pointer;
+}
+
+.matches-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.matches-table tbody > tr:hover {
+    background: rgba(0,255,0,.2);
+}
+
+.matches-table .selected-cell {
+    background: rgba(0,0,255,.4);
+    color: white;
+}
+
+.matches-table .selected-row {
+    background: rgba(0,255,0,.3);
+}

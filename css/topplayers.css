@@ -1,0 +1,174 @@
+#top-players {
+    position: relative;
+    text-align: left;
+    display: inline-block;
+    vertical-align: top;
+    width: 500px;
+    height: 100%;
+}
+
+#top-players .top-players-player {
+    position: relative;
+    display: block;
+    height: 44px;
+    margin-top: 7px;
+    border-radius: 10px;
+    border-bottom: 2px dashed lightgray;
+}
+
+#top-players .top-players-player:last-child {
+
+}
+
+#top-players h2 {
+    display: inline-block;
+    width: 160px;
+    vertical-align: middle;
+    padding: 10px 5px;
+    color: darkslateblue;
+    font-weight: 700;
+    font-size: 20px;
+    float: left;
+}
+
+#top-players p {
+    display: inline-block;
+    font-weight: bold;
+    vertical-align: bottom;
+    float: left;
+    clear: right;
+    width: 180px;
+    margin-top: 4px;
+}
+
+#top-players p:last-child {
+    position: absolute;
+    text-align: right;
+    right: 10px; top: 0px;
+    font-size: 30px;
+    width: 140px;   
+}
+
+#top-players p:last-child span {
+    font-weight: bold;
+    text-align: right;
+    width: 120px;
+}
+
+#top-players span:not(:last-child) {
+    display: inline-block;
+    color: rgb(4, 54, 17);
+    font-weight: 700;
+    margin-left: 2px;
+    width: 30px;
+    text-align: center;
+    float: right;
+    margin: 0px 2px;
+    
+}
+
+#top-players span:nth-child(3) {
+    display: inline-block;
+    float: right;
+    text-align: right;
+    font-weight: 900;
+    color: rgb(129, 52, 42);
+    width: 40px;
+}
+
+
+/*************************** 
+TOP PLAYERS TICKET ON CLICK
+****************************/
+
+#top-players-list-close {
+    display: inline-block;
+    background: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    width: 25px; height: 20px;
+    padding: 0;
+    text-decoration: none;
+    color: orangered;
+    transition: background .15s ease-in, color .15s ease-in;
+}
+
+#top-players-list-close:hover {
+    color: white;
+    background: red;
+}
+
+#top-players-list {
+    position: absolute;
+    border: 1px solid lightgray;
+    box-shadow: 0 0 10px #bbb;
+    background: white;
+    top: 50px; left: 50px;
+    z-index: 100;
+    display: none;
+    padding: 10px;
+}
+
+#top-players-list .cell {
+    display: inline-block;
+    width: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 3px 0;
+}
+
+#top-players-list .header-matches {
+    color: navy;
+    font-weight: bold;
+    margin-left: 210px;
+}
+
+#top-players-list .header-tickets {
+    color: navy;
+    font-weight: bold;
+    margin-left: 90px;
+}
+
+#top-players-list .header-money {
+    color: navy;
+    font-weight: bold;
+    margin-left: 65px;
+    text-align: right;
+}
+
+#top-players-list .place {
+    padding-left: 5px;
+}
+
+#top-players-list .stats {
+    color: gray;
+    text-align: center;
+}
+
+#top-players-list .percent {
+    color: darkslateblue;
+    width: 50px;
+    font-weight: 700;
+    text-align: right;
+    padding-right: 10px;
+    border-right: 1px solid lightgray;
+}
+
+#top-players-list .money {
+    color: darkslateblue;
+    font-weight: 900;
+    width: 70px;
+    text-align: right;
+    padding-right: 5px;
+}
+
+#top-players-list .username {
+    font-weight: 700;
+    width: 150px;
+}
+
+.top-players-list-row:hover {
+    cursor: pointer;
+    background: rgba(0,255,0,.2);
+}

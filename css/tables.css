@@ -1,0 +1,29 @@
+th {
+    cursor: default;
+    padding: 5px 10px;
+    border-bottom: 2px solid gray;
+    background: white;
+}
+
+th:last-child {
+    border-right: none;
+}
+
+td {
+    cursor: default;
+}
+
+.green-row {
+    background: rgba(0,255,0,.2);
+    border-bottom: 1px solid lightgreen;
+}
+
+.yellow-row {
+    background: rgba(255,255,0,.3);
+    border-bottom: 1px solid yellow;
+}
+
+.orange-row {
+    background: rgba(255,0,0,.1);
+    border-bottom: 1px solid pink;
+}

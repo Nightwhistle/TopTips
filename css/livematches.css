@@ -1,0 +1,37 @@
+#live-matches {
+    width: 100%;
+}
+    
+#live-matches table {
+    table-layout: fixed;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+#live-matches-table th {
+    padding: 3px 0;
+}
+
+#live-matches-table .time {
+    width: 40px;
+}
+
+#live-matches-table .score {
+    width: 60px;
+}
+
+#live-matches-table td:nth-child(2) {
+    text-align: right;
+    padding-right: 5px;
+}
+
+#live-matches-table td:nth-child(3) {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+#live-matches-table td:nth-child(4) {
+    padding-left: 5px;
+}

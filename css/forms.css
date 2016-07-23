@@ -1,0 +1,94 @@
+#forms {
+    display: block;
+    padding: 10px;
+    background: white;
+    text-align: center;
+    border-bottom: 2px dashed lightgrey;
+    height: 170px;
+}
+
+form {
+    margin-right: 20px;
+    vertical-align: top;
+    display: inline-block;
+    height: 100%;
+}
+
+form div {
+    clear: both;
+    text-align: right;
+    display: block;
+}
+
+form span {
+    text-align: right;
+    padding-right: 5px;
+    display: inline-block;
+    width: 120px;
+    font-style: italic;
+    color: gray;
+}
+
+form label {
+    font-style: italic;
+    color: gray;
+    margin: 0 5px 0 5px;
+    vertical-align: middle;
+}
+
+#forms .login-error {
+    color: red;
+    font-weight: bold;
+    margin: 0; padding: 0;
+}
+
+input[type='text'], input[type='password'], input[type='email'] {
+    font-family: 'Lato';
+    font-weight: 700;
+    color: rgba(129, 52, 42, 1);
+    border-radius: 5px;
+    border: 1px solid rgb(190,190,190);
+    font-size: 16px;
+    padding: 2px 5px;
+    width: 200px;
+    margin: 2px;
+}
+
+input[type='checkbox'] {
+    margin-top: 3px;
+    zoom: 1.5;
+}
+
+#cpanel {
+    display: block;
+    padding: 5px 0;
+    margin: 5px 0;
+    background: white;
+    border-bottom: 2px dashed lightgray;
+}
+
+.cpanel-link {
+    display: inline-block;
+    background: darkslateblue;
+    border: none;
+    color: white;
+    margin: 8px 0;
+    padding: 5px 0;
+    text-decoration: none;
+    font-weight: 700;
+    width: 100px;
+    text-align: center;
+}
+
+#cpanel .cpanel-link {
+    margin-left: 5px;
+}
+
+#ticket .cpanel-link {
+    margin: 5px;
+}
+
+.cpanel-link:hover {
+    color: white;
+    background: slateblue;
+}

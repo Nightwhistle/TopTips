@@ -1,0 +1,48 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700,900);
+@import url(https://fonts.googleapis.com/css?family=Courgette);
+
+body {
+    font-family: 'Lato', 'Arial';
+    font-size: 14px;
+}
+
+div {
+
+}
+
+#site-content {
+
+}
+
+#site-top {
+    text-align: center;
+    width: 100%;
+    background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/ecailles.png);
+    margin-bottom: 20px;
+    padding-top: 10px;
+    box-shadow: 0 5px 20px #ccc;
+}
+
+#site-left {
+    width: 470px;
+    float: left;
+    margin: 0 5px;
+    display: inline-block;
+    border-right: 2px dashed lightgray;
+    padding-right: 10px;
+}
+
+#site-left div {
+    padding-bottom: 20px;
+}
+
+
+
+
+.main-header {
+    position: relative;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 3px 10px 20px 3px;
+    color: darkslateblue;
+}
