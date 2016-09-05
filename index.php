@@ -29,6 +29,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
+
         require_once './php/init/init.php';
         
         $user = new User();

@@ -24,9 +24,7 @@ if ($password === $passwordRepeat && !empty($password) && !empty($passwordRepeat
 } else {
     $user->error[] = "Passwords must match!";
 }
-
 $user->register();
-
 $_SESSION['errors'] = $user->error;
 
 header('Location: ' . $_SERVER['HTTP_REFERER']);

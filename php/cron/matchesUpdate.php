@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Login/php/init/init.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/TopTips/php/init/init.php';
 
 ini_set('memory_limit', '512M' );
 set_time_limit(60);

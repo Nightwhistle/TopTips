@@ -1,20 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jul 29, 2014 at 02:43 PM
--- Server version: 5.5.24-log
--- PHP Version: 5.4.3
+-- Host: 127.0.0.1
+-- Generation Time: Sep 05, 2016 at 02:58 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `login`
@@ -26,8 +26,8 @@ SET time_zone = "+00:00";
 -- Table structure for table `finishedmatches`
 --
 
-CREATE TABLE IF NOT EXISTS `finishedmatches` (
-  `matchid` int(11) unsigned NOT NULL,
+CREATE TABLE `finishedmatches` (
+  `matchid` int(11) UNSIGNED NOT NULL,
   `home` varchar(200) NOT NULL,
   `away` varchar(200) NOT NULL,
   `result` varchar(20) NOT NULL,
@@ -47,8 +47,7 @@ CREATE TABLE IF NOT EXISTS `finishedmatches` (
   `sh2p` varchar(4) NOT NULL,
   `gg` varchar(4) NOT NULL,
   `gg3p` varchar(4) NOT NULL,
-  `time` varchar(13) NOT NULL,
-  UNIQUE KEY `matchid` (`matchid`)
+  `time` varchar(13) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -153,197 +152,29 @@ INSERT INTO `finishedmatches` (`matchid`, `home`, `away`, `result`, `fr1`, `frx`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fixtures`
---
-
-CREATE TABLE IF NOT EXISTS `fixtures` (
-  `matchid` int(11) unsigned NOT NULL,
-  `time` varchar(13) NOT NULL,
-  `minute` varchar(5) NOT NULL,
-  `sportid` tinyint(4) unsigned NOT NULL,
-  `league` varchar(200) NOT NULL,
-  `home` varchar(200) NOT NULL,
-  `away` varchar(200) NOT NULL,
-  `status` varchar(15) NOT NULL,
-  `fr1` float NOT NULL,
-  `frx` float NOT NULL,
-  `fr2` float NOT NULL,
-  `fh1` float NOT NULL,
-  `fhx` float NOT NULL,
-  `fh2` float NOT NULL,
-  `sh1` float NOT NULL,
-  `shx` float NOT NULL,
-  `sh2` float NOT NULL,
-  `go02` float NOT NULL,
-  `go23` float NOT NULL,
-  `go3p` float NOT NULL,
-  `fh2p` float NOT NULL,
-  `sh2p` float NOT NULL,
-  `gg` float NOT NULL,
-  `gg3p` float NOT NULL,
-  UNIQUE KEY `matchid` (`matchid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `fixtures`
---
-
-INSERT INTO `fixtures` (`matchid`, `time`, `minute`, `sportid`, `league`, `home`, `away`, `status`, `fr1`, `frx`, `fr2`, `fh1`, `fhx`, `fh2`, `sh1`, `shx`, `sh2`, `go02`, `go23`, `go3p`, `fh2p`, `sh2p`, `gg`, `gg3p`) VALUES
-(1453292, '1406592900', '', 1, 'Argentina - Cup', 'Belgrano', 'Independiente', 'FINISHED', 2.55, 2.7, 2.85, 3.4, 1.85, 3.6, 3.05, 2.05, 3.35, 1.47, 1.77, 2.35, 3.4, 2.75, 1.98, 2.7),
-(1453599, '1406599200', '', 1, 'Usa - Mls', 'Seattle', 'Los Angeles', 'FINISHED', 2.15, 3.3, 3.2, 2.8, 2.2, 3.7, 2.55, 2.5, 3.45, 1.95, 1.98, 1.75, 2.7, 2.05, 1.65, 1.97),
-(1457210, '1406626200', '', 1, 'Australia Cup', 'Broadmeadow Magic', 'Brisbane Strikers', 'FINISHED', 4.9, 3.8, 1.55, 5, 2.75, 1.83, 4.5, 3, 1.8, 2.7, 2.05, 1.35, 2.05, 1.55, 1.4, 1.62),
-(1457211, '1406626200', '', 1, 'Australia Cup', 'Brisbane Olympic', 'Melbourne Knights', 'FINISHED', 1.9, 3.4, 3.45, 2.3, 2.55, 3.5, 2.15, 2.75, 3.6, 3.2, 2.2, 1.25, 1.8, 1.42, 1.3, 1.47),
-(1457212, '1406626200', '', 1, 'Australia Cup', 'Manly United', 'Sydney Olympic', 'FINISHED', 3.8, 3.45, 1.8, 3.7, 2.5, 2.3, 4, 2.7, 2.1, 2.55, 2.05, 1.4, 2.15, 1.57, 1.4, 1.62),
-(1457213, '1406626200', '', 1, 'Australia Cup', 'South Springvale', 'South Cardiff', 'FINISHED', 2.3, 3.3, 2.7, 2.75, 2.3, 3.2, 2.6, 2.55, 3, 2.7, 2.05, 1.35, 2.05, 1.55, 1.25, 1.52),
-(1457214, '1406628000', '', 1, 'Australia - Victoria Premier League', 'Pascoe', 'Werribee', 'FINISHED', 1.45, 4, 5.8, 1.7, 2.9, 5.6, 1.68, 3.05, 5.2, 2.25, 2, 1.5, 2.3, 1.73, 1.62, 1.85),
-(1457215, '1406716200', '', 1, 'Australia - Victoria Premier League', 'Dandenong', 'Northcot', 'READY', 3.15, 3.3, 2.05, 3.25, 2.45, 2.55, 3.35, 2.6, 2.35, 2.55, 2.05, 1.4, 2.15, 1.57, 1.37, 1.6),
-(1457216, '1406716200', '', 1, 'Australia - Victoria Premier League', 'Green Gully', 'Heidelberg', 'READY', 3.5, 3.7, 1.8, 3.6, 2.65, 2.2, 3.8, 2.85, 2, 3.6, 2.45, 1.2, 1.65, 1.35, 1.27, 1.45),
-(1457217, '1406716200', '', 1, 'Australia - Victoria Premier League', 'Melbourne Port', 'Ballarat', 'READY', 2.3, 3.3, 2.7, 2.75, 2.3, 3.2, 2.6, 2.55, 3, 2.7, 2.05, 1.35, 2.05, 1.55, 1.25, 1.52),
-(1457218, '1406759400', '', 1, 'Brazil - Copa', 'Hamburgo', 'ABC', 'READY', 2.5, 3, 2.65, 3.25, 1.98, 3.35, 2.95, 2.3, 3, 1.72, 1.92, 1.9, 2.95, 2.15, 1.63, 2.15),
-(1457219, '1406768400', '', 1, 'Brazil - Copa', 'Vasco da Gama ', 'Ponte Preta ', 'READY', 1.65, 3.4, 4.7, 2.2, 2.25, 4.7, 1.95, 2.7, 4.4, 1.75, 1.93, 1.85, 2.85, 2.1, 1.82, 2.2),
-(1457220, '1406768400', '', 1, 'Brazil - Copa', 'Bragantino ', 'Sao Paulo', 'READY', 6.25, 3.8, 1.45, 6, 2.55, 1.83, 5.4, 2.95, 1.7, 1.75, 1.93, 1.85, 2.85, 2.1, 1.97, 2.4),
-(1457221, '1406768400', '', 1, 'Brazil - Copa', 'Internacional', 'Ceara', 'READY', 1.4, 4, 6.75, 1.73, 2.6, 6.75, 1.67, 3, 5.6, 1.85, 1.93, 1.75, 2.7, 2, 1.92, 2.3),
-(1457224, '1406670900', '', 1, 'Brazil - Serie B', 'Nautico', 'Icasa', 'READY', 1.95, 3.2, 3.5, 2.7, 2.05, 4, 2.35, 2.35, 3.9, 1.63, 1.9, 2, 3.1, 2.25, 1.9, 2.3),
-(1457225, '1406678400', '', 1, 'Brazil - Serie B', 'Portuguesa ', 'Oeste', 'READY', 1.6, 3.5, 5, 2.15, 2.3, 4.8, 1.9, 2.75, 4.5, 1.75, 1.93, 1.85, 2.85, 2.1, 1.85, 2.2),
-(1457226, '1406678400', '', 1, 'Copa Euroamericana', 'Universitad Catolica', 'Valencia', 'READY', 2.65, 2.85, 2.6, 3.2, 2.05, 3.2, 2.95, 2.35, 2.9, 2.05, 2, 1.6, 2.45, 1.82, 1.45, 1.75),
-(1457227, '1406757300', '', 1, 'Copa Euroamericana', 'America', 'Atl.Madrid', 'READY', 4.4, 3.4, 1.7, 4.2, 2.4, 2.2, 4.1, 2.8, 1.95, 2.05, 2, 1.6, 2.45, 1.82, 1.6, 1.87),
-(1457228, '1406767800', '', 1, 'Copa Euroamericana', 'Palmeiras ', 'Fiorentina', 'READY', 2.75, 3.1, 2.35, 3.35, 2.1, 3, 3.05, 2.4, 2.75, 1.8, 1.93, 1.8, 2.8, 2.05, 1.58, 2),
-(1457229, '1406679300', '', 1, 'Copa Libertadores', 'Defensor Sporting', 'Nacional A.', 'READY', 1.85, 3.35, 4.1, 2.7, 2.1, 4.2, 2.3, 2.45, 4.2, 1.67, 1.92, 2.05, 3.15, 2.35, 2, 2.4),
-(1457230, '1406765700', '', 1, 'Copa Libertadores', 'Bolivar', 'San Lorenzo', 'READY', 1.67, 3.45, 5.2, 2.4, 2.2, 4.7, 2.05, 2.65, 4.7, 1.67, 1.92, 2.05, 3.15, 2.35, 2.05, 2.5),
-(1457231, '1406741400', '', 1, 'Ecuador 1', 'Universidad Catolica ', 'Mushuc Runa', 'READY', 1.6, 3.35, 5.3, 2.25, 2.05, 5.5, 1.93, 2.6, 4.9, 1.55, 1.85, 2.15, 3.2, 2.35, 2.05, 2.65),
-(1457232, '1406764800', '', 1, 'Ecuador 1', 'Emelec', 'Deportivo Quito', 'READY', 1.47, 3.6, 6.5, 1.9, 2.3, 6.75, 1.8, 2.7, 5.5, 1.62, 1.87, 2.05, 3.15, 2.3, 2.15, 2.6),
-(1457233, '1406764800', '', 1, 'Ecuador 1', 'Jose Teran', 'Deportivo Cuenca', 'READY', 1.48, 3.6, 6.25, 1.95, 2.25, 6.5, 1.82, 2.7, 5.3, 1.62, 1.87, 2.05, 3.15, 2.3, 2.15, 2.6),
-(1457234, '1406764800', '', 1, 'Ecuador 1', 'Olmedo', 'El Nacional', 'READY', 2.15, 3, 3.2, 2.9, 1.95, 3.9, 2.55, 2.3, 3.5, 1.55, 1.85, 2.15, 3.2, 2.35, 1.92, 2.5),
-(1457235, '1406766600', '', 1, 'Ecuador 1', 'LDU Loja', 'LDU Quito', 'READY', 2.55, 2.9, 2.65, 3.4, 1.88, 3.5, 3, 2.15, 3.15, 1.55, 1.85, 2.15, 3.2, 2.35, 1.82, 2.45),
-(1457236, '1406766600', '', 1, 'Ecuador 1', 'Manta ', 'B.Guayaquil', 'READY', 3.45, 3, 2.05, 3.9, 2, 2.8, 3.8, 2.3, 2.45, 1.55, 1.85, 2.15, 3.2, 2.35, 1.97, 2.5),
-(1457237, '1406647800', '', 1, 'Finland - Ykkonen', 'KTP', 'Jazz', 'READY', 1.2, 5.8, 9.5, 1.42, 3.35, 9.5, 1.38, 3.4, 10.5, 2.7, 2.05, 1.35, 2.05, 1.55, 1.77, 2.1),
-(1457238, '1406747700', '', 1, 'Iceland  -  Cup', 'Keflavik', 'Vikingur', 'READY', 2.25, 3.15, 2.85, 2.8, 2.2, 3.4, 2.6, 2.45, 3.2, 1.98, 2, 1.65, 2.55, 1.87, 1.55, 1.85),
-(1457240, '1406743200', '', 1, 'Iceland 2', 'Grindavik', 'Bolungarvik', 'READY', 1.8, 3.35, 3.9, 2.4, 2.35, 3.8, 2.1, 2.6, 4, 1.98, 2, 1.65, 2.55, 1.87, 1.65, 1.9),
-(1457241, '1406744100', '', 1, 'Iceland 2', 'Hk Kopavogur', 'Ka Akureyri', 'READY', 2.1, 3.3, 3, 2.65, 2.3, 3.4, 2.4, 2.6, 3.25, 2.25, 2, 1.5, 2.3, 1.73, 1.45, 1.67),
-(1457242, '1406750400', '', 1, 'Iceland 2', 'Leiknir', 'KV Reykjavik', 'READY', 1.45, 4, 5.8, 1.7, 2.9, 5.6, 1.68, 3.05, 5.2, 2.25, 2, 1.5, 2.3, 1.73, 1.62, 1.85),
-(1457243, '1406750400', '', 1, 'Iceland 2', 'Throttur R.', 'Selfoss', 'READY', 1.9, 3.35, 3.5, 2.5, 2.3, 3.7, 2.2, 2.7, 3.5, 2.05, 2, 1.6, 2.45, 1.82, 1.57, 1.82),
-(1457244, '1406750400', '', 1, 'Iceland 2', 'Tindastoll', 'Haukar', 'READY', 5.4, 3.9, 1.5, 5.4, 2.7, 1.8, 5, 2.95, 1.75, 2.4, 2, 1.45, 2.2, 1.62, 1.5, 1.75),
-(1457245, '1406750400', '', 1, 'Iceland 2', 'Vikingur O.', 'Akranes', 'READY', 2.35, 3.25, 2.65, 2.8, 2.3, 3.15, 2.7, 2.5, 2.95, 2.4, 2, 1.45, 2.2, 1.62, 1.3, 1.6),
-(1457246, '1406714400', '', 1, 'Japan - J2 League', 'Fukuoka', 'Bellmare S.', 'READY', 5.6, 3.8, 1.5, 5.6, 2.5, 1.88, 5, 2.85, 1.78, 1.98, 2, 1.65, 2.55, 1.87, 1.75, 2),
-(1457247, '1406714400', '', 1, 'Japan - J2 League', 'Gifu', 'Okayama', 'READY', 2.9, 3, 2.3, 3.7, 1.95, 3.05, 3.3, 2.25, 2.75, 1.62, 1.87, 2.05, 3.15, 2.3, 1.8, 2.3),
-(1457248, '1406714400', '', 1, 'Japan - J2 League', 'Jubilo Iwata', 'Kamatamare', 'READY', 1.3, 4.5, 8.5, 1.62, 2.75, 7.75, 1.53, 3.05, 7.75, 1.98, 2, 1.65, 2.55, 1.87, 2, 2.35),
-(1457249, '1406714400', '', 1, 'Japan - J2 League', 'JEF United', 'Yamagata', 'READY', 2.5, 2.95, 2.7, 3.3, 1.92, 3.5, 2.95, 2.2, 3.2, 1.55, 1.85, 2.15, 3.2, 2.35, 1.85, 2.45),
-(1457250, '1406714400', '', 1, 'Japan - J2 League', 'Mito Hollyhock', 'V-Varen Nagasaki ', 'READY', 3, 2.9, 2.3, 3.8, 1.9, 3.1, 3.4, 2.2, 2.75, 1.52, 1.82, 2.2, 3.25, 2.4, 1.95, 2.55),
-(1457251, '1406714400', '', 1, 'Japan - J2 League', 'Oita Trinita', 'Tochigi', 'READY', 2.25, 2.95, 3.05, 3.05, 1.95, 3.7, 2.7, 2.25, 3.4, 1.55, 1.85, 2.15, 3.2, 2.35, 1.9, 2.45),
-(1457252, '1406714400', '', 1, 'Japan - J2 League', 'Sapporo', 'Yokohama FC', 'READY', 2.05, 2.95, 3.5, 2.85, 1.93, 4.1, 2.45, 2.3, 3.8, 1.48, 1.8, 2.3, 3.35, 2.55, 2.05, 2.65),
-(1457253, '1406714400', '', 1, 'Japan - J2 League', 'Tokyo Verdy', 'Kyoto Purple Sanga', 'READY', 3.15, 3.05, 2.15, 3.8, 2, 2.85, 3.5, 2.3, 2.55, 1.63, 1.9, 2, 3.1, 2.25, 1.82, 2.3),
-(1457254, '1406714400', '', 1, 'Japan - J2 League', 'Toyama', 'Ehime', 'READY', 3, 2.9, 2.3, 3.8, 1.9, 3.1, 3.4, 2.2, 2.75, 1.52, 1.82, 2.2, 3.25, 2.4, 1.95, 2.55),
-(1457255, '1406714400', '', 1, 'Japan - J2 League', 'Yamaga', 'Kumamoto', 'READY', 1.8, 3.3, 4, 2.55, 2.1, 4.1, 2.15, 2.45, 4.3, 1.72, 1.92, 1.9, 2.95, 2.15, 1.85, 2.2),
-(1457256, '1406716200', '', 1, 'Japan - J2 League', 'Kusatsu', 'Giravanz', 'READY', 2.65, 2.9, 2.55, 3.6, 1.85, 3.4, 3.25, 2.15, 3, 1.48, 1.8, 2.3, 3.35, 2.55, 1.93, 2.65),
-(1457286, '1406655000', '', 1, 'Qualification Champions League', 'Sparta Praha', 'Malmo', 'READY', 1.45, 3.9, 7.5, 1.93, 2.35, 7, 1.8, 2.8, 6, 1.7, 1.95, 2, 3.1, 2.3, 2.2, 2.6),
-(1457287, '1406657700', '', 1, 'Qualification Champions League', 'Slovan B.', 'Sheriff Tiraspol', 'READY', 1.95, 3.25, 3.8, 2.9, 2, 4.2, 2.4, 2.4, 4, 1.6, 1.87, 2.2, 3.25, 2.45, 2.05, 2.65),
-(1457288, '1406658600', '', 1, 'Qualification Champions League', 'Debrecen', 'Bate Borisov', 'READY', 2.55, 3.05, 2.65, 3.5, 1.9, 3.7, 3.1, 2.15, 3.35, 1.6, 1.87, 2.2, 3.25, 2.45, 1.87, 2.6),
-(1457289, '1406732400', '', 1, 'Qualification Champions League', 'Aktobe', 'Steaua', 'READY', 3.5, 3, 2.15, 4.1, 1.98, 3, 3.7, 2.35, 2.6, 1.55, 1.85, 2.3, 3.35, 2.6, 2.1, 2.7),
-(1457290, '1406734200', '', 1, 'Qualification Champions League', 'Qarabag', 'Salzburg', 'READY', 9, 5, 1.3, 8, 3, 1.6, 8, 3.2, 1.55, 2.3, 2.05, 1.55, 2.4, 1.82, 1.87, 2.25),
-(1457291, '1406736000', '', 1, 'Qualification Champions League', 'Ael Limassol', 'Zenit', 'READY', 6.75, 4, 1.47, 6, 2.6, 1.88, 5.5, 2.95, 1.78, 1.85, 1.98, 1.85, 2.85, 2.15, 1.97, 2.45),
-(1457292, '1406736000', '', 1, 'Qualification Champions League', 'Dnipro', 'Copenhagen', 'READY', 1.75, 3.4, 4.7, 2.55, 2.15, 4.5, 2.15, 2.55, 4.5, 1.67, 1.92, 2.05, 3.15, 2.35, 2, 2.4),
-(1457293, '1406736000', '', 1, 'Qualification Champions League', 'Helsinki', 'Apoel Nicosia', 'READY', 3.3, 3, 2.25, 3.9, 1.97, 3.15, 3.5, 2.3, 2.75, 1.6, 1.87, 2.2, 3.25, 2.45, 1.98, 2.6),
-(1457294, '1406739600', '', 1, 'Qualification Champions League', 'Grasshoppers', 'Lille', 'READY', 3.05, 3, 2.4, 3.8, 1.95, 3.3, 3.45, 2.2, 3, 1.62, 1.9, 2.15, 3.2, 2.4, 1.9, 2.5),
-(1457295, '1406743200', '', 1, 'Qualification Champions League', 'Feyenoord', 'Besiktas', 'READY', 2.05, 3.25, 3.5, 2.85, 2.1, 3.9, 2.5, 2.35, 3.9, 1.8, 1.97, 1.9, 2.95, 2.2, 1.83, 2.25),
-(1457296, '1406743200', '', 1, 'Qualification Champions League', 'Ludogorets', 'Partizan', 'READY', 1.85, 3.3, 4.2, 2.8, 2, 4.4, 2.3, 2.45, 4.2, 1.6, 1.87, 2.2, 3.25, 2.45, 2.1, 2.65),
-(1457297, '1406743200', '', 1, 'Qualification Champions League', 'Standard', 'Panathinaikos', 'READY', 1.7, 3.45, 4.9, 2.4, 2.2, 4.6, 2.1, 2.6, 4.6, 1.75, 1.97, 1.95, 3.05, 2.3, 1.93, 2.35),
-(1457298, '1406744100', '', 1, 'Qualification Champions League', 'Aalborg', 'Dinamo Z.', 'READY', 2.6, 3, 2.75, 3.45, 1.95, 3.5, 3.1, 2.25, 3.2, 1.7, 1.95, 2, 3.1, 2.3, 1.75, 2.3),
-(1457299, '1406745000', '', 1, 'Qualification Champions League', 'Maribor', 'Maccabi T.A.', 'READY', 2.4, 2.95, 3.1, 3.35, 1.9, 3.9, 3, 2.15, 3.5, 1.55, 1.85, 2.3, 3.35, 2.6, 2, 2.65),
-(1457300, '1406745900', '', 1, 'Qualification Champions League', 'Legia', 'Celtic', 'READY', 2.75, 3.05, 2.55, 3.5, 1.95, 3.45, 3.2, 2.25, 3.1, 1.67, 1.92, 2.05, 3.15, 2.35, 1.75, 2.35),
-(1457301, '1406678400', '', 1, 'Mexico - Copa', 'Dep.Irapuato', 'Queretaro', 'READY', 2.7, 3.1, 2.4, 3.35, 2.05, 3.1, 3, 2.35, 2.8, 1.8, 1.93, 1.8, 2.8, 2.05, 1.58, 2),
-(1457302, '1406678400', '', 1, 'Mexico - Copa', 'Tijuana', 'Zacatepec', 'READY', 1.55, 3.6, 5.3, 1.95, 2.5, 5.1, 1.87, 2.75, 4.6, 1.98, 2, 1.65, 2.55, 1.87, 1.7, 1.97),
-(1457303, '1406678400', '', 1, 'Mexico - Copa', 'Guadalajara', 'Dep.Tepic', 'READY', 1.55, 3.7, 5.2, 1.9, 2.6, 5, 1.83, 2.85, 4.7, 2.05, 2, 1.6, 2.45, 1.82, 1.65, 1.9),
-(1457304, '1406678400', '', 1, 'Mexico - Copa', 'Mineros Z.', 'U.Guadalajara', 'READY', 2.5, 3, 2.65, 3.25, 1.98, 3.35, 2.95, 2.3, 3, 1.72, 1.92, 1.9, 2.95, 2.15, 1.63, 2.15),
-(1457305, '1406678400', '', 1, 'Mexico - Copa', 'Lobos', 'Jaguares', 'READY', 2.7, 3.1, 2.4, 3.35, 2.05, 3.1, 3, 2.35, 2.8, 1.75, 1.93, 1.85, 2.85, 2.1, 1.6, 2.05),
-(1457306, '1406685600', '', 1, 'Mexico - Copa', 'Tigres', 'Altamira', 'READY', 1.45, 3.9, 6, 1.83, 2.55, 5.8, 1.7, 2.95, 5.4, 1.92, 1.95, 1.7, 2.65, 1.95, 1.82, 2.15),
-(1457307, '1406685600', '', 1, 'Mexico - Copa', 'Correcaminos', 'Monterrey', 'READY', 2.95, 3.15, 2.2, 3.7, 2.1, 2.75, 3.3, 2.4, 2.55, 1.8, 1.93, 1.8, 2.8, 2.05, 1.65, 2),
-(1457308, '1406764800', '', 1, 'Mexico - Copa', 'San Luis', 'Santos Laguna', 'READY', 3.5, 3.35, 1.9, 3.7, 2.3, 2.5, 3.8, 2.55, 2.2, 1.98, 2, 1.65, 2.55, 1.87, 1.62, 1.87),
-(1457309, '1406764800', '', 1, 'Mexico - Copa', 'Morelia', 'Necaxa', 'READY', 1.75, 3.35, 4.2, 2.35, 2.25, 4.2, 2.05, 2.65, 4.1, 1.85, 1.93, 1.75, 2.7, 2, 1.72, 2),
-(1457310, '1406764800', '', 1, 'Mexico - Copa', 'Merida', 'Toluca', 'READY', 3.05, 3.15, 2.15, 3.7, 2.1, 2.75, 3.35, 2.45, 2.5, 1.8, 1.93, 1.8, 2.8, 2.05, 1.67, 2),
-(1457311, '1406764800', '', 1, 'Mexico - Copa', 'Veracruz', 'Oaxaca', 'READY', 1.8, 3.25, 4, 2.55, 2.1, 4.1, 2.15, 2.45, 4.3, 1.67, 1.92, 1.95, 3.05, 2.25, 1.9, 2.25),
-(1457312, '1406772000', '', 1, 'Mexico - Copa', 'Atlas', 'Dorados', 'READY', 1.7, 3.4, 4.4, 2.2, 2.35, 4.4, 2, 2.7, 4.2, 1.92, 1.95, 1.7, 2.65, 1.95, 1.67, 1.97),
-(1457313, '1406772000', '', 1, 'Mexico - Copa', 'Celaya', 'Puebla', 'READY', 2.85, 3.15, 2.25, 3.5, 2.1, 2.9, 3.2, 2.4, 2.6, 1.8, 1.93, 1.8, 2.8, 2.05, 1.63, 2),
-(1457314, '1406772000', '', 1, 'Mexico - Copa', 'Pumas Unam', 'Atlante', 'READY', 1.65, 3.45, 4.7, 2.1, 2.5, 4.3, 1.95, 2.7, 4.4, 1.98, 2, 1.65, 2.55, 1.87, 1.65, 1.95),
-(1457315, '1406674800', '', 1, 'International Champions Cup', 'Inter', 'Man.Utd.', 'READY', 4.2, 3.5, 1.8, 3.9, 2.4, 2.45, 4, 2.8, 2.1, 2.2, 2.05, 1.6, 2.45, 1.87, 1.62, 1.87),
-(1457316, '1406682900', '', 1, 'International Champions Cup', 'Roma', 'Real Madrid', 'READY', 5.2, 3.8, 1.6, 4.9, 2.65, 2, 4.6, 2.9, 1.93, 2.4, 2.05, 1.5, 2.3, 1.78, 1.55, 1.78),
-(1457317, '1406761200', '', 1, 'International Champions Cup', 'Man.City', 'Liverpool', 'READY', 2.05, 3.4, 3.35, 2.6, 2.4, 3.6, 2.4, 2.65, 3.45, 2.35, 2.05, 1.52, 2.3, 1.78, 1.47, 1.72),
-(1457318, '1406651400', '', 1, 'Germany 4 Bavaria', 'Wurzburger', 'Buchbach', 'READY', 1.42, 4.1, 6, 1.68, 2.9, 5.8, 1.6, 3.05, 6.25, 2.25, 2, 1.5, 2.3, 1.73, 1.65, 1.9),
-(1457319, '1406653200', '', 1, 'Germany 4 Bavaria', 'Heimstetten', 'Bayreuth', 'READY', 1.9, 3.35, 3.5, 2.5, 2.3, 3.7, 2.2, 2.7, 3.5, 2.05, 2, 1.6, 2.45, 1.82, 1.57, 1.82),
-(1457320, '1406653200', '', 1, 'Germany 4 Bavaria', 'Memmingen', 'Illertissen', 'READY', 3.4, 3.3, 1.95, 3.6, 2.3, 2.5, 3.5, 2.7, 2.2, 2.05, 2, 1.6, 2.45, 1.82, 1.57, 1.82),
-(1457321, '1406653200', '', 1, 'Norway 1', 'Valerenga', 'Stabaek', 'READY', 1.43, 4.2, 5.8, 1.68, 2.9, 5.8, 1.6, 3.15, 5.8, 2.7, 2.05, 1.35, 2.05, 1.55, 1.42, 1.72),
-(1457322, '1406665800', '', 1, 'Peru - Apertura', 'Cienciano', 'Alianza Lima', 'READY', 2.05, 3, 3.45, 2.8, 2, 3.9, 2.45, 2.3, 3.8, 1.55, 1.85, 2.15, 3.2, 2.35, 1.97, 2.5),
-(1457323, '1406744100', '', 1, 'Peru - Apertura', 'Los Caimanes', 'Cesar Vallejo', 'READY', 3.15, 3.15, 2.1, 3.8, 2, 2.85, 3.7, 2.3, 2.5, 1.72, 1.92, 1.9, 2.95, 2.15, 1.77, 2.2),
-(1457324, '1406753100', '', 1, 'Peru - Apertura', 'Cajamarca', 'Juan Aurich', 'READY', 2.45, 3.05, 2.65, 3.15, 2.05, 3.3, 2.85, 2.35, 3, 1.75, 1.93, 1.85, 2.85, 2.1, 1.6, 2.05),
-(1457325, '1406768400', '', 1, 'Peru - Apertura', 'Universitario', 'Real Garcilaso', 'READY', 1.75, 3.25, 4.3, 2.45, 2.1, 4.4, 2.1, 2.5, 4.3, 1.62, 1.87, 2.05, 3.15, 2.3, 1.97, 2.35),
-(1457329, '1406651400', '', 1, 'Friendly', 'Hannover', 'Red Star', 'READY', 1.6, 3.7, 4.6, 1.95, 2.6, 4.7, 1.88, 2.8, 4.5, 2.4, 2, 1.45, 2.2, 1.62, 1.45, 1.7),
-(1457330, '1406651400', '', 1, 'Friendly', 'Zurich', 'Hoffenheim', 'READY', 4.3, 3.45, 1.7, 4.2, 2.55, 2.1, 4.1, 2.8, 1.95, 2.25, 2, 1.5, 2.3, 1.73, 1.52, 1.75),
-(1457331, '1406649600', '', 1, 'Friendly', 'Schalke', 'Stoke', 'READY', 1.65, 3.6, 4.4, 2.05, 2.55, 4.4, 1.95, 2.8, 4.1, 2.25, 2, 1.5, 2.3, 1.73, 1.52, 1.75),
-(1457332, '1406658600', '', 1, 'Friendly', 'Macclesfield', 'Rochedale', 'READY', 3.1, 3.2, 2.1, 3.5, 2.2, 2.7, 3.4, 2.45, 2.45, 1.92, 1.95, 1.7, 2.65, 1.95, 1.6, 1.9),
-(1457333, '1406658600', '', 1, 'Friendly', 'Portsmouth', 'Bournemouth', 'READY', 3.35, 3.35, 1.95, 3.5, 2.35, 2.5, 3.5, 2.7, 2.2, 2.15, 2, 1.55, 2.4, 1.77, 1.52, 1.75),
-(1457334, '1406719800', '', 1, 'Singapore S.league', 'Tanjong', 'Home United', 'READY', 3.8, 3.45, 1.8, 3.7, 2.5, 2.3, 3.8, 2.7, 2.1, 2.4, 2, 1.45, 2.2, 1.62, 1.45, 1.67),
-(1457337, '1406761200', '', 1, 'Usa - Mls', 'D.C. United', 'Toronto', 'READY', 2, 3.35, 3.5, 2.8, 2.15, 3.8, 2.4, 2.5, 3.8, 1.9, 1.98, 1.8, 2.8, 2.1, 1.73, 2.05),
-(1457338, '1406763000', '', 1, 'Usa - Mls', 'New England', 'Colorado', 'READY', 2.4, 3.25, 2.8, 3.1, 2.15, 3.4, 2.8, 2.4, 3.2, 2, 2, 1.7, 2.65, 2, 1.55, 1.88),
-(1457339, '1406766600', '', 1, 'Usa - Mls', 'Chicago', 'Vancouver', 'READY', 2.25, 3.3, 3, 2.9, 2.2, 3.6, 2.65, 2.45, 3.4, 2.1, 2.05, 1.65, 2.55, 1.92, 1.57, 1.87),
-(1457340, '1406768400', '', 1, 'Usa - Mls', 'Salt Lake', 'New York', 'READY', 2.1, 3.35, 3.3, 2.75, 2.25, 3.6, 2.45, 2.65, 3.4, 2.2, 2.05, 1.6, 2.45, 1.87, 1.53, 1.82),
-(1458081, '1406655000', '', 1, 'Friendly', 'Estoril', 'Ferreira', 'READY', 1.7, 3.4, 4.4, 2.2, 2.4, 4.2, 1.95, 2.8, 4.1, 2.05, 2, 1.6, 2.45, 1.82, 1.6, 1.87),
-(1458082, '1406635200', '90''', 1, 'Friendly', 'Kitchee', 'PSG', 'LIVE', 17, 8.5, 1.07, 16, 4.7, 1.2, 14, 4, 1.27, 5, 3.45, 1.1, 1.47, 1.22, 1.9, 2.1),
-(1458083, '1406638800', '45''', 1, 'Friendly', 'Metalac', 'Zeta', 'LIVE', 2.75, 3.1, 2.35, 3.35, 2.05, 3.05, 3.05, 2.4, 2.75, 1.75, 1.93, 1.85, 2.85, 2.1, 1.62, 2.05),
-(1458084, '1406647800', '', 1, 'Friendly', 'Radnicki K.', 'Ufa', 'READY', 3.7, 3.35, 1.85, 3.7, 2.3, 2.45, 4, 2.55, 2.15, 1.98, 2, 1.65, 2.55, 1.87, 1.65, 1.9),
-(1458085, '1406649600', '', 1, 'Friendly', 'B93', 'B 1908', 'READY', 2.1, 3.3, 3, 2.6, 2.4, 3.25, 2.4, 2.6, 3.25, 2.55, 2.05, 1.4, 2.15, 1.57, 1.35, 1.57),
-(1458086, '1406649600', '', 1, 'Friendly', 'Siofok', 'Veszprem', 'READY', 1.3, 4.8, 7.5, 1.5, 3.25, 7.25, 1.48, 3.25, 7.75, 2.95, 2.05, 1.3, 1.9, 1.47, 1.52, 1.82),
-(1458087, '1406653200', '', 1, 'Friendly', 'ADO Den Haag', 'OFI', 'READY', 1.35, 4.4, 7, 1.58, 3.05, 6.5, 1.58, 3.05, 6.5, 2.25, 2, 1.5, 2.3, 1.73, 1.67, 2.05),
-(1458088, '1406653200', '', 1, 'Friendly', 'Cambuur', 'Volendam', 'READY', 1.65, 3.6, 4.4, 2.05, 2.6, 4.3, 1.93, 2.8, 4.2, 2.4, 2, 1.45, 2.2, 1.62, 1.45, 1.7),
-(1458089, '1406653200', '', 1, 'Friendly', 'Heracles', 'Konyaspor', 'READY', 2.45, 3.15, 2.6, 3, 2.2, 3.1, 2.85, 2.4, 2.9, 2.15, 2, 1.55, 2.4, 1.77, 1.4, 1.7),
-(1458090, '1406656800', '', 1, 'Friendly', 'Frickley', 'Scunthorpe', 'READY', 8, 5.3, 1.25, 8.5, 3.25, 1.45, 7.75, 3.5, 1.43, 3.2, 2.2, 1.25, 1.8, 1.42, 1.55, 1.85),
-(1458091, '1406657700', '', 1, 'Friendly', 'Exeter', 'Swansea', 'READY', 8.5, 5.2, 1.25, 9, 3.1, 1.48, 9, 3.2, 1.45, 2.25, 2, 1.5, 2.3, 1.73, 1.82, 2.15),
-(1458092, '1406658600', '', 1, 'Friendly', 'Newport', 'Coventry', 'READY', 2.85, 3.15, 2.25, 3.4, 2.2, 2.8, 3.2, 2.45, 2.6, 1.98, 2, 1.65, 2.55, 1.87, 1.55, 1.85),
-(1458093, '1406658600', '', 1, 'Friendly', 'Notts County', 'Birmingham', 'READY', 3.7, 3.35, 1.85, 3.7, 2.3, 2.45, 4, 2.55, 2.15, 1.98, 2, 1.65, 2.55, 1.87, 1.65, 1.9),
-(1458094, '1406658600', '', 1, 'Friendly', 'Stevenage', 'Reading', 'READY', 4.1, 3.4, 1.75, 4, 2.35, 2.3, 4.1, 2.65, 2.05, 1.98, 2, 1.65, 2.55, 1.87, 1.65, 1.9),
-(1458095, '1406658600', '', 1, 'Friendly', 'Alfreton', 'Rotherham', 'READY', 5.2, 3.7, 1.55, 5, 2.65, 1.88, 4.7, 2.85, 1.83, 2.15, 2, 1.55, 2.4, 1.77, 1.6, 1.85),
-(1458096, '1406658600', '', 1, 'Friendly', 'Burton', 'Derby', 'READY', 4.7, 3.45, 1.65, 4.3, 2.5, 2.1, 4.4, 2.7, 1.95, 1.98, 2, 1.65, 2.55, 1.87, 1.65, 1.95),
-(1458097, '1406658600', '', 1, 'Friendly', 'Dover Athletic', 'Gillingham', 'READY', 4.4, 3.4, 1.7, 4.2, 2.55, 2.1, 4.1, 2.8, 1.95, 2.15, 2, 1.55, 2.4, 1.77, 1.55, 1.82),
-(1458098, '1406658600', '', 1, 'Friendly', 'Lincoln', 'Mansfield', 'READY', 2.85, 3.15, 2.25, 3.4, 2.15, 2.85, 3.2, 2.4, 2.6, 1.85, 1.93, 1.75, 2.7, 2, 1.6, 1.92),
-(1458099, '1406659500', '', 1, 'Friendly', 'Brentford', 'Osasuna', 'READY', 2.25, 3.15, 2.85, 2.8, 2.2, 3.4, 2.6, 2.45, 3.2, 1.98, 2, 1.65, 2.55, 1.87, 1.55, 1.85),
-(1458100, '1406659500', '', 1, 'Friendly', 'Oxford', 'Wolverhampton', 'READY', 3.5, 3.35, 1.9, 3.6, 2.4, 2.4, 3.5, 2.7, 2.2, 2.15, 2, 1.55, 2.4, 1.77, 1.52, 1.77),
-(1458101, '1406659500', '', 1, 'Friendly', 'Sheffield Utd', 'Huddersfield', 'READY', 2.65, 3.15, 2.4, 3.2, 2.15, 3.05, 2.95, 2.4, 2.8, 2.05, 2, 1.6, 2.45, 1.82, 1.45, 1.77),
-(1458102, '1406659500', '', 1, 'Friendly', 'Southend', 'Ipswich', 'READY', 3.7, 3.35, 1.85, 3.7, 2.3, 2.45, 3.8, 2.7, 2.1, 2.05, 2, 1.6, 2.45, 1.82, 1.6, 1.85),
-(1458103, '1406659500', '', 1, 'Friendly', 'Swindon', 'Leeds', 'READY', 3, 3.2, 2.15, 3.5, 2.2, 2.7, 3.2, 2.55, 2.45, 2.05, 2, 1.6, 2.45, 1.82, 1.5, 1.8),
-(1458104, '1406659500', '', 1, 'Friendly', 'Cheltenham', 'Bristol City', 'READY', 3.4, 3.25, 1.95, 3.7, 2.25, 2.55, 3.7, 2.5, 2.3, 1.92, 1.95, 1.7, 2.65, 1.95, 1.65, 1.9),
-(1458105, '1406659500', '', 1, 'Friendly', 'Altrincham', 'Accrington', 'READY', 3.5, 3.35, 1.9, 3.7, 2.3, 2.5, 3.5, 2.7, 2.2, 2.05, 2, 1.6, 2.45, 1.82, 1.57, 1.82),
-(1458106, '1406659500', '', 1, 'Friendly', 'Cambridge', 'Milton Keynes Dons', 'READY', 3.45, 3.25, 1.95, 3.8, 2.1, 2.7, 3.7, 2.5, 2.3, 1.8, 1.93, 1.8, 2.8, 2.05, 1.72, 2),
-(1458107, '1406659500', '', 1, 'Friendly', 'Kidderminster', 'Shrewsbury', 'READY', 3.2, 3.25, 2.05, 3.5, 2.25, 2.65, 3.5, 2.45, 2.4, 1.98, 2, 1.65, 2.55, 1.87, 1.6, 1.85),
-(1458108, '1406659500', '', 1, 'Friendly', 'Leyton', 'QPR', 'READY', 3.4, 3.3, 1.95, 3.5, 2.3, 2.55, 3.7, 2.5, 2.3, 1.98, 2, 1.65, 2.55, 1.87, 1.6, 1.87),
-(1458109, '1406659500', '', 1, 'Friendly', 'Luton', 'Colchester', 'READY', 2.1, 3.25, 3.05, 2.65, 2.3, 3.4, 2.4, 2.55, 3.3, 2.15, 2, 1.55, 2.4, 1.77, 1.47, 1.75),
-(1458110, '1406659500', '', 1, 'Friendly', 'Preston', 'Burnley', 'READY', 3.1, 3.2, 2.1, 3.5, 2.2, 2.7, 3.4, 2.45, 2.45, 1.98, 2, 1.65, 2.55, 1.87, 1.55, 1.85),
-(1458111, '1406660400', '', 1, 'Friendly', 'Sunderland', 'Recreativo', 'READY', 1.85, 3.35, 3.7, 2.45, 2.3, 3.7, 2.1, 2.7, 3.8, 2.05, 2, 1.6, 2.45, 1.82, 1.6, 1.85);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `fixturesplay`
 --
 
-CREATE TABLE IF NOT EXISTS `fixturesplay` (
+CREATE TABLE `fixturesplay` (
   `matchid` int(11) NOT NULL,
   `time` varchar(15) NOT NULL,
-  `tips_played` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `fr1_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `frx_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `fr2_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `fh1_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `fhx_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `fh2_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `sh1_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `shx_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `sh2_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `go02_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `go23_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `go3p_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `fh2p_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `sh2p_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `gg_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `gg3p_p` smallint(5) unsigned NOT NULL DEFAULT '0',
-  UNIQUE KEY `matchid` (`matchid`)
+  `tips_played` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `fr1_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `frx_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `fr2_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `fh1_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `fhx_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `fh2_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `sh1_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `shx_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `sh2_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `go02_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `go23_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `go3p_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `fh2p_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `sh2p_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `gg_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `gg3p_p` smallint(5) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -662,12 +493,11 @@ INSERT INTO `fixturesplay` (`matchid`, `time`, `tips_played`, `fr1_p`, `frx_p`, 
 -- Table structure for table `groups`
 --
 
-CREATE TABLE IF NOT EXISTS `groups` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `groups` (
+  `id` int(11) NOT NULL,
   `name` varchar(20) NOT NULL,
-  `permissions` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `permissions` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `groups`
@@ -680,15 +510,209 @@ INSERT INTO `groups` (`id`, `name`, `permissions`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `matches`
+--
+
+CREATE TABLE `matches` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `time` varchar(13) NOT NULL,
+  `minute` varchar(5) NOT NULL,
+  `sportid` tinyint(4) UNSIGNED NOT NULL,
+  `league` varchar(200) NOT NULL,
+  `home` varchar(200) NOT NULL,
+  `away` varchar(200) NOT NULL,
+  `status` varchar(15) NOT NULL,
+  `odds` text NOT NULL,
+  `fr1` float NOT NULL,
+  `frx` float NOT NULL,
+  `fr2` float NOT NULL,
+  `fh1` float NOT NULL,
+  `fhx` float NOT NULL,
+  `fh2` float NOT NULL,
+  `sh1` float NOT NULL,
+  `shx` float NOT NULL,
+  `sh2` float NOT NULL,
+  `go02` float NOT NULL,
+  `go23` float NOT NULL,
+  `go3p` float NOT NULL,
+  `fh2p` float NOT NULL,
+  `sh2p` float NOT NULL,
+  `gg` float NOT NULL,
+  `gg3p` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `matches`
+--
+
+INSERT INTO `matches` (`id`, `time`, `minute`, `sportid`, `league`, `home`, `away`, `status`, `odds`, `fr1`, `frx`, `fr2`, `fh1`, `fhx`, `fh2`, `sh1`, `shx`, `sh2`, `go02`, `go23`, `go3p`, `fh2p`, `sh2p`, `gg`, `gg3p`) VALUES
+(1453292, '1406592900', '', 1, 'Argentina - Cup', 'Belgrano', 'Independiente', 'FINISHED', '', 2.55, 2.7, 2.85, 3.4, 1.85, 3.6, 3.05, 2.05, 3.35, 1.47, 1.77, 2.35, 3.4, 2.75, 1.98, 2.7),
+(1453599, '1406599200', '', 1, 'Usa - Mls', 'Seattle', 'Los Angeles', 'FINISHED', '', 2.15, 3.3, 3.2, 2.8, 2.2, 3.7, 2.55, 2.5, 3.45, 1.95, 1.98, 1.75, 2.7, 2.05, 1.65, 1.97),
+(1457210, '1406626200', '', 1, 'Australia Cup', 'Broadmeadow Magic', 'Brisbane Strikers', 'FINISHED', '', 4.9, 3.8, 1.55, 5, 2.75, 1.83, 4.5, 3, 1.8, 2.7, 2.05, 1.35, 2.05, 1.55, 1.4, 1.62),
+(1457211, '1406626200', '', 1, 'Australia Cup', 'Brisbane Olympic', 'Melbourne Knights', 'FINISHED', '', 1.9, 3.4, 3.45, 2.3, 2.55, 3.5, 2.15, 2.75, 3.6, 3.2, 2.2, 1.25, 1.8, 1.42, 1.3, 1.47),
+(1457212, '1406626200', '', 1, 'Australia Cup', 'Manly United', 'Sydney Olympic', 'FINISHED', '', 3.8, 3.45, 1.8, 3.7, 2.5, 2.3, 4, 2.7, 2.1, 2.55, 2.05, 1.4, 2.15, 1.57, 1.4, 1.62),
+(1457213, '1406626200', '', 1, 'Australia Cup', 'South Springvale', 'South Cardiff', 'FINISHED', '', 2.3, 3.3, 2.7, 2.75, 2.3, 3.2, 2.6, 2.55, 3, 2.7, 2.05, 1.35, 2.05, 1.55, 1.25, 1.52),
+(1457214, '1406628000', '', 1, 'Australia - Victoria Premier League', 'Pascoe', 'Werribee', 'FINISHED', '', 1.45, 4, 5.8, 1.7, 2.9, 5.6, 1.68, 3.05, 5.2, 2.25, 2, 1.5, 2.3, 1.73, 1.62, 1.85),
+(1457215, '1406716200', '', 1, 'Australia - Victoria Premier League', 'Dandenong', 'Northcot', 'READY', '', 3.15, 3.3, 2.05, 3.25, 2.45, 2.55, 3.35, 2.6, 2.35, 2.55, 2.05, 1.4, 2.15, 1.57, 1.37, 1.6),
+(1457216, '1406716200', '', 1, 'Australia - Victoria Premier League', 'Green Gully', 'Heidelberg', 'READY', '', 3.5, 3.7, 1.8, 3.6, 2.65, 2.2, 3.8, 2.85, 2, 3.6, 2.45, 1.2, 1.65, 1.35, 1.27, 1.45),
+(1457217, '1406716200', '', 1, 'Australia - Victoria Premier League', 'Melbourne Port', 'Ballarat', 'READY', '', 2.3, 3.3, 2.7, 2.75, 2.3, 3.2, 2.6, 2.55, 3, 2.7, 2.05, 1.35, 2.05, 1.55, 1.25, 1.52),
+(1457218, '1406759400', '', 1, 'Brazil - Copa', 'Hamburgo', 'ABC', 'READY', '', 2.5, 3, 2.65, 3.25, 1.98, 3.35, 2.95, 2.3, 3, 1.72, 1.92, 1.9, 2.95, 2.15, 1.63, 2.15),
+(1457219, '1406768400', '', 1, 'Brazil - Copa', 'Vasco da Gama ', 'Ponte Preta ', 'READY', '', 1.65, 3.4, 4.7, 2.2, 2.25, 4.7, 1.95, 2.7, 4.4, 1.75, 1.93, 1.85, 2.85, 2.1, 1.82, 2.2),
+(1457220, '1406768400', '', 1, 'Brazil - Copa', 'Bragantino ', 'Sao Paulo', 'READY', '', 6.25, 3.8, 1.45, 6, 2.55, 1.83, 5.4, 2.95, 1.7, 1.75, 1.93, 1.85, 2.85, 2.1, 1.97, 2.4),
+(1457221, '1406768400', '', 1, 'Brazil - Copa', 'Internacional', 'Ceara', 'READY', '', 1.4, 4, 6.75, 1.73, 2.6, 6.75, 1.67, 3, 5.6, 1.85, 1.93, 1.75, 2.7, 2, 1.92, 2.3),
+(1457224, '1406670900', '', 1, 'Brazil - Serie B', 'Nautico', 'Icasa', 'READY', '', 1.95, 3.2, 3.5, 2.7, 2.05, 4, 2.35, 2.35, 3.9, 1.63, 1.9, 2, 3.1, 2.25, 1.9, 2.3),
+(1457225, '1406678400', '', 1, 'Brazil - Serie B', 'Portuguesa ', 'Oeste', 'READY', '', 1.6, 3.5, 5, 2.15, 2.3, 4.8, 1.9, 2.75, 4.5, 1.75, 1.93, 1.85, 2.85, 2.1, 1.85, 2.2),
+(1457226, '1406678400', '', 1, 'Copa Euroamericana', 'Universitad Catolica', 'Valencia', 'READY', '', 2.65, 2.85, 2.6, 3.2, 2.05, 3.2, 2.95, 2.35, 2.9, 2.05, 2, 1.6, 2.45, 1.82, 1.45, 1.75),
+(1457227, '1406757300', '', 1, 'Copa Euroamericana', 'America', 'Atl.Madrid', 'READY', '', 4.4, 3.4, 1.7, 4.2, 2.4, 2.2, 4.1, 2.8, 1.95, 2.05, 2, 1.6, 2.45, 1.82, 1.6, 1.87),
+(1457228, '1406767800', '', 1, 'Copa Euroamericana', 'Palmeiras ', 'Fiorentina', 'READY', '', 2.75, 3.1, 2.35, 3.35, 2.1, 3, 3.05, 2.4, 2.75, 1.8, 1.93, 1.8, 2.8, 2.05, 1.58, 2),
+(1457229, '1406679300', '', 1, 'Copa Libertadores', 'Defensor Sporting', 'Nacional A.', 'READY', '', 1.85, 3.35, 4.1, 2.7, 2.1, 4.2, 2.3, 2.45, 4.2, 1.67, 1.92, 2.05, 3.15, 2.35, 2, 2.4),
+(1457230, '1406765700', '', 1, 'Copa Libertadores', 'Bolivar', 'San Lorenzo', 'READY', '', 1.67, 3.45, 5.2, 2.4, 2.2, 4.7, 2.05, 2.65, 4.7, 1.67, 1.92, 2.05, 3.15, 2.35, 2.05, 2.5),
+(1457231, '1406741400', '', 1, 'Ecuador 1', 'Universidad Catolica ', 'Mushuc Runa', 'READY', '', 1.6, 3.35, 5.3, 2.25, 2.05, 5.5, 1.93, 2.6, 4.9, 1.55, 1.85, 2.15, 3.2, 2.35, 2.05, 2.65),
+(1457232, '1406764800', '', 1, 'Ecuador 1', 'Emelec', 'Deportivo Quito', 'READY', '', 1.47, 3.6, 6.5, 1.9, 2.3, 6.75, 1.8, 2.7, 5.5, 1.62, 1.87, 2.05, 3.15, 2.3, 2.15, 2.6),
+(1457233, '1406764800', '', 1, 'Ecuador 1', 'Jose Teran', 'Deportivo Cuenca', 'READY', '', 1.48, 3.6, 6.25, 1.95, 2.25, 6.5, 1.82, 2.7, 5.3, 1.62, 1.87, 2.05, 3.15, 2.3, 2.15, 2.6),
+(1457234, '1406764800', '', 1, 'Ecuador 1', 'Olmedo', 'El Nacional', 'READY', '', 2.15, 3, 3.2, 2.9, 1.95, 3.9, 2.55, 2.3, 3.5, 1.55, 1.85, 2.15, 3.2, 2.35, 1.92, 2.5),
+(1457235, '1406766600', '', 1, 'Ecuador 1', 'LDU Loja', 'LDU Quito', 'READY', '', 2.55, 2.9, 2.65, 3.4, 1.88, 3.5, 3, 2.15, 3.15, 1.55, 1.85, 2.15, 3.2, 2.35, 1.82, 2.45),
+(1457236, '1406766600', '', 1, 'Ecuador 1', 'Manta ', 'B.Guayaquil', 'READY', '', 3.45, 3, 2.05, 3.9, 2, 2.8, 3.8, 2.3, 2.45, 1.55, 1.85, 2.15, 3.2, 2.35, 1.97, 2.5),
+(1457237, '1406647800', '', 1, 'Finland - Ykkonen', 'KTP', 'Jazz', 'READY', '', 1.2, 5.8, 9.5, 1.42, 3.35, 9.5, 1.38, 3.4, 10.5, 2.7, 2.05, 1.35, 2.05, 1.55, 1.77, 2.1),
+(1457238, '1406747700', '', 1, 'Iceland  -  Cup', 'Keflavik', 'Vikingur', 'READY', '', 2.25, 3.15, 2.85, 2.8, 2.2, 3.4, 2.6, 2.45, 3.2, 1.98, 2, 1.65, 2.55, 1.87, 1.55, 1.85),
+(1457240, '1406743200', '', 1, 'Iceland 2', 'Grindavik', 'Bolungarvik', 'READY', '', 1.8, 3.35, 3.9, 2.4, 2.35, 3.8, 2.1, 2.6, 4, 1.98, 2, 1.65, 2.55, 1.87, 1.65, 1.9),
+(1457241, '1406744100', '', 1, 'Iceland 2', 'Hk Kopavogur', 'Ka Akureyri', 'READY', '', 2.1, 3.3, 3, 2.65, 2.3, 3.4, 2.4, 2.6, 3.25, 2.25, 2, 1.5, 2.3, 1.73, 1.45, 1.67),
+(1457242, '1406750400', '', 1, 'Iceland 2', 'Leiknir', 'KV Reykjavik', 'READY', '', 1.45, 4, 5.8, 1.7, 2.9, 5.6, 1.68, 3.05, 5.2, 2.25, 2, 1.5, 2.3, 1.73, 1.62, 1.85),
+(1457243, '1406750400', '', 1, 'Iceland 2', 'Throttur R.', 'Selfoss', 'READY', '', 1.9, 3.35, 3.5, 2.5, 2.3, 3.7, 2.2, 2.7, 3.5, 2.05, 2, 1.6, 2.45, 1.82, 1.57, 1.82),
+(1457244, '1406750400', '', 1, 'Iceland 2', 'Tindastoll', 'Haukar', 'READY', '', 5.4, 3.9, 1.5, 5.4, 2.7, 1.8, 5, 2.95, 1.75, 2.4, 2, 1.45, 2.2, 1.62, 1.5, 1.75),
+(1457245, '1406750400', '', 1, 'Iceland 2', 'Vikingur O.', 'Akranes', 'READY', '', 2.35, 3.25, 2.65, 2.8, 2.3, 3.15, 2.7, 2.5, 2.95, 2.4, 2, 1.45, 2.2, 1.62, 1.3, 1.6),
+(1457246, '1406714400', '', 1, 'Japan - J2 League', 'Fukuoka', 'Bellmare S.', 'READY', '', 5.6, 3.8, 1.5, 5.6, 2.5, 1.88, 5, 2.85, 1.78, 1.98, 2, 1.65, 2.55, 1.87, 1.75, 2),
+(1457247, '1406714400', '', 1, 'Japan - J2 League', 'Gifu', 'Okayama', 'READY', '', 2.9, 3, 2.3, 3.7, 1.95, 3.05, 3.3, 2.25, 2.75, 1.62, 1.87, 2.05, 3.15, 2.3, 1.8, 2.3),
+(1457248, '1406714400', '', 1, 'Japan - J2 League', 'Jubilo Iwata', 'Kamatamare', 'READY', '', 1.3, 4.5, 8.5, 1.62, 2.75, 7.75, 1.53, 3.05, 7.75, 1.98, 2, 1.65, 2.55, 1.87, 2, 2.35),
+(1457249, '1406714400', '', 1, 'Japan - J2 League', 'JEF United', 'Yamagata', 'READY', '', 2.5, 2.95, 2.7, 3.3, 1.92, 3.5, 2.95, 2.2, 3.2, 1.55, 1.85, 2.15, 3.2, 2.35, 1.85, 2.45),
+(1457250, '1406714400', '', 1, 'Japan - J2 League', 'Mito Hollyhock', 'V-Varen Nagasaki ', 'READY', '', 3, 2.9, 2.3, 3.8, 1.9, 3.1, 3.4, 2.2, 2.75, 1.52, 1.82, 2.2, 3.25, 2.4, 1.95, 2.55),
+(1457251, '1406714400', '', 1, 'Japan - J2 League', 'Oita Trinita', 'Tochigi', 'READY', '', 2.25, 2.95, 3.05, 3.05, 1.95, 3.7, 2.7, 2.25, 3.4, 1.55, 1.85, 2.15, 3.2, 2.35, 1.9, 2.45),
+(1457252, '1406714400', '', 1, 'Japan - J2 League', 'Sapporo', 'Yokohama FC', 'READY', '', 2.05, 2.95, 3.5, 2.85, 1.93, 4.1, 2.45, 2.3, 3.8, 1.48, 1.8, 2.3, 3.35, 2.55, 2.05, 2.65),
+(1457253, '1406714400', '', 1, 'Japan - J2 League', 'Tokyo Verdy', 'Kyoto Purple Sanga', 'READY', '', 3.15, 3.05, 2.15, 3.8, 2, 2.85, 3.5, 2.3, 2.55, 1.63, 1.9, 2, 3.1, 2.25, 1.82, 2.3),
+(1457254, '1406714400', '', 1, 'Japan - J2 League', 'Toyama', 'Ehime', 'READY', '', 3, 2.9, 2.3, 3.8, 1.9, 3.1, 3.4, 2.2, 2.75, 1.52, 1.82, 2.2, 3.25, 2.4, 1.95, 2.55),
+(1457255, '1406714400', '', 1, 'Japan - J2 League', 'Yamaga', 'Kumamoto', 'READY', '', 1.8, 3.3, 4, 2.55, 2.1, 4.1, 2.15, 2.45, 4.3, 1.72, 1.92, 1.9, 2.95, 2.15, 1.85, 2.2),
+(1457256, '1406716200', '', 1, 'Japan - J2 League', 'Kusatsu', 'Giravanz', 'READY', '', 2.65, 2.9, 2.55, 3.6, 1.85, 3.4, 3.25, 2.15, 3, 1.48, 1.8, 2.3, 3.35, 2.55, 1.93, 2.65),
+(1457286, '1406655000', '', 1, 'Qualification Champions League', 'Sparta Praha', 'Malmo', 'READY', '', 1.45, 3.9, 7.5, 1.93, 2.35, 7, 1.8, 2.8, 6, 1.7, 1.95, 2, 3.1, 2.3, 2.2, 2.6),
+(1457287, '1406657700', '', 1, 'Qualification Champions League', 'Slovan B.', 'Sheriff Tiraspol', 'READY', '', 1.95, 3.25, 3.8, 2.9, 2, 4.2, 2.4, 2.4, 4, 1.6, 1.87, 2.2, 3.25, 2.45, 2.05, 2.65),
+(1457288, '1406658600', '', 1, 'Qualification Champions League', 'Debrecen', 'Bate Borisov', 'READY', '', 2.55, 3.05, 2.65, 3.5, 1.9, 3.7, 3.1, 2.15, 3.35, 1.6, 1.87, 2.2, 3.25, 2.45, 1.87, 2.6),
+(1457289, '1406732400', '', 1, 'Qualification Champions League', 'Aktobe', 'Steaua', 'READY', '', 3.5, 3, 2.15, 4.1, 1.98, 3, 3.7, 2.35, 2.6, 1.55, 1.85, 2.3, 3.35, 2.6, 2.1, 2.7),
+(1457290, '1406734200', '', 1, 'Qualification Champions League', 'Qarabag', 'Salzburg', 'READY', '', 9, 5, 1.3, 8, 3, 1.6, 8, 3.2, 1.55, 2.3, 2.05, 1.55, 2.4, 1.82, 1.87, 2.25),
+(1457291, '1406736000', '', 1, 'Qualification Champions League', 'Ael Limassol', 'Zenit', 'READY', '', 6.75, 4, 1.47, 6, 2.6, 1.88, 5.5, 2.95, 1.78, 1.85, 1.98, 1.85, 2.85, 2.15, 1.97, 2.45),
+(1457292, '1406736000', '', 1, 'Qualification Champions League', 'Dnipro', 'Copenhagen', 'READY', '', 1.75, 3.4, 4.7, 2.55, 2.15, 4.5, 2.15, 2.55, 4.5, 1.67, 1.92, 2.05, 3.15, 2.35, 2, 2.4),
+(1457293, '1406736000', '', 1, 'Qualification Champions League', 'Helsinki', 'Apoel Nicosia', 'READY', '', 3.3, 3, 2.25, 3.9, 1.97, 3.15, 3.5, 2.3, 2.75, 1.6, 1.87, 2.2, 3.25, 2.45, 1.98, 2.6),
+(1457294, '1406739600', '', 1, 'Qualification Champions League', 'Grasshoppers', 'Lille', 'READY', '', 3.05, 3, 2.4, 3.8, 1.95, 3.3, 3.45, 2.2, 3, 1.62, 1.9, 2.15, 3.2, 2.4, 1.9, 2.5),
+(1457295, '1406743200', '', 1, 'Qualification Champions League', 'Feyenoord', 'Besiktas', 'READY', '', 2.05, 3.25, 3.5, 2.85, 2.1, 3.9, 2.5, 2.35, 3.9, 1.8, 1.97, 1.9, 2.95, 2.2, 1.83, 2.25),
+(1457296, '1406743200', '', 1, 'Qualification Champions League', 'Ludogorets', 'Partizan', 'READY', '', 1.85, 3.3, 4.2, 2.8, 2, 4.4, 2.3, 2.45, 4.2, 1.6, 1.87, 2.2, 3.25, 2.45, 2.1, 2.65),
+(1457297, '1406743200', '', 1, 'Qualification Champions League', 'Standard', 'Panathinaikos', 'READY', '', 1.7, 3.45, 4.9, 2.4, 2.2, 4.6, 2.1, 2.6, 4.6, 1.75, 1.97, 1.95, 3.05, 2.3, 1.93, 2.35),
+(1457298, '1406744100', '', 1, 'Qualification Champions League', 'Aalborg', 'Dinamo Z.', 'READY', '', 2.6, 3, 2.75, 3.45, 1.95, 3.5, 3.1, 2.25, 3.2, 1.7, 1.95, 2, 3.1, 2.3, 1.75, 2.3),
+(1457299, '1406745000', '', 1, 'Qualification Champions League', 'Maribor', 'Maccabi T.A.', 'READY', '', 2.4, 2.95, 3.1, 3.35, 1.9, 3.9, 3, 2.15, 3.5, 1.55, 1.85, 2.3, 3.35, 2.6, 2, 2.65),
+(1457300, '1406745900', '', 1, 'Qualification Champions League', 'Legia', 'Celtic', 'READY', '', 2.75, 3.05, 2.55, 3.5, 1.95, 3.45, 3.2, 2.25, 3.1, 1.67, 1.92, 2.05, 3.15, 2.35, 1.75, 2.35),
+(1457301, '1406678400', '', 1, 'Mexico - Copa', 'Dep.Irapuato', 'Queretaro', 'READY', '', 2.7, 3.1, 2.4, 3.35, 2.05, 3.1, 3, 2.35, 2.8, 1.8, 1.93, 1.8, 2.8, 2.05, 1.58, 2),
+(1457302, '1406678400', '', 1, 'Mexico - Copa', 'Tijuana', 'Zacatepec', 'READY', '', 1.55, 3.6, 5.3, 1.95, 2.5, 5.1, 1.87, 2.75, 4.6, 1.98, 2, 1.65, 2.55, 1.87, 1.7, 1.97),
+(1457303, '1406678400', '', 1, 'Mexico - Copa', 'Guadalajara', 'Dep.Tepic', 'READY', '', 1.55, 3.7, 5.2, 1.9, 2.6, 5, 1.83, 2.85, 4.7, 2.05, 2, 1.6, 2.45, 1.82, 1.65, 1.9),
+(1457304, '1406678400', '', 1, 'Mexico - Copa', 'Mineros Z.', 'U.Guadalajara', 'READY', '', 2.5, 3, 2.65, 3.25, 1.98, 3.35, 2.95, 2.3, 3, 1.72, 1.92, 1.9, 2.95, 2.15, 1.63, 2.15),
+(1457305, '1406678400', '', 1, 'Mexico - Copa', 'Lobos', 'Jaguares', 'READY', '', 2.7, 3.1, 2.4, 3.35, 2.05, 3.1, 3, 2.35, 2.8, 1.75, 1.93, 1.85, 2.85, 2.1, 1.6, 2.05),
+(1457306, '1406685600', '', 1, 'Mexico - Copa', 'Tigres', 'Altamira', 'READY', '', 1.45, 3.9, 6, 1.83, 2.55, 5.8, 1.7, 2.95, 5.4, 1.92, 1.95, 1.7, 2.65, 1.95, 1.82, 2.15),
+(1457307, '1406685600', '', 1, 'Mexico - Copa', 'Correcaminos', 'Monterrey', 'READY', '', 2.95, 3.15, 2.2, 3.7, 2.1, 2.75, 3.3, 2.4, 2.55, 1.8, 1.93, 1.8, 2.8, 2.05, 1.65, 2),
+(1457308, '1406764800', '', 1, 'Mexico - Copa', 'San Luis', 'Santos Laguna', 'READY', '', 3.5, 3.35, 1.9, 3.7, 2.3, 2.5, 3.8, 2.55, 2.2, 1.98, 2, 1.65, 2.55, 1.87, 1.62, 1.87),
+(1457309, '1406764800', '', 1, 'Mexico - Copa', 'Morelia', 'Necaxa', 'READY', '', 1.75, 3.35, 4.2, 2.35, 2.25, 4.2, 2.05, 2.65, 4.1, 1.85, 1.93, 1.75, 2.7, 2, 1.72, 2),
+(1457310, '1406764800', '', 1, 'Mexico - Copa', 'Merida', 'Toluca', 'READY', '', 3.05, 3.15, 2.15, 3.7, 2.1, 2.75, 3.35, 2.45, 2.5, 1.8, 1.93, 1.8, 2.8, 2.05, 1.67, 2),
+(1457311, '1406764800', '', 1, 'Mexico - Copa', 'Veracruz', 'Oaxaca', 'READY', '', 1.8, 3.25, 4, 2.55, 2.1, 4.1, 2.15, 2.45, 4.3, 1.67, 1.92, 1.95, 3.05, 2.25, 1.9, 2.25),
+(1457312, '1406772000', '', 1, 'Mexico - Copa', 'Atlas', 'Dorados', 'READY', '', 1.7, 3.4, 4.4, 2.2, 2.35, 4.4, 2, 2.7, 4.2, 1.92, 1.95, 1.7, 2.65, 1.95, 1.67, 1.97),
+(1457313, '1406772000', '', 1, 'Mexico - Copa', 'Celaya', 'Puebla', 'READY', '', 2.85, 3.15, 2.25, 3.5, 2.1, 2.9, 3.2, 2.4, 2.6, 1.8, 1.93, 1.8, 2.8, 2.05, 1.63, 2),
+(1457314, '1406772000', '', 1, 'Mexico - Copa', 'Pumas Unam', 'Atlante', 'READY', '', 1.65, 3.45, 4.7, 2.1, 2.5, 4.3, 1.95, 2.7, 4.4, 1.98, 2, 1.65, 2.55, 1.87, 1.65, 1.95),
+(1457315, '1406674800', '', 1, 'International Champions Cup', 'Inter', 'Man.Utd.', 'READY', '', 4.2, 3.5, 1.8, 3.9, 2.4, 2.45, 4, 2.8, 2.1, 2.2, 2.05, 1.6, 2.45, 1.87, 1.62, 1.87),
+(1457316, '1406682900', '', 1, 'International Champions Cup', 'Roma', 'Real Madrid', 'READY', '', 5.2, 3.8, 1.6, 4.9, 2.65, 2, 4.6, 2.9, 1.93, 2.4, 2.05, 1.5, 2.3, 1.78, 1.55, 1.78),
+(1457317, '1406761200', '', 1, 'International Champions Cup', 'Man.City', 'Liverpool', 'READY', '', 2.05, 3.4, 3.35, 2.6, 2.4, 3.6, 2.4, 2.65, 3.45, 2.35, 2.05, 1.52, 2.3, 1.78, 1.47, 1.72),
+(1457318, '1406651400', '', 1, 'Germany 4 Bavaria', 'Wurzburger', 'Buchbach', 'READY', '', 1.42, 4.1, 6, 1.68, 2.9, 5.8, 1.6, 3.05, 6.25, 2.25, 2, 1.5, 2.3, 1.73, 1.65, 1.9),
+(1457319, '1406653200', '', 1, 'Germany 4 Bavaria', 'Heimstetten', 'Bayreuth', 'READY', '', 1.9, 3.35, 3.5, 2.5, 2.3, 3.7, 2.2, 2.7, 3.5, 2.05, 2, 1.6, 2.45, 1.82, 1.57, 1.82),
+(1457320, '1406653200', '', 1, 'Germany 4 Bavaria', 'Memmingen', 'Illertissen', 'READY', '', 3.4, 3.3, 1.95, 3.6, 2.3, 2.5, 3.5, 2.7, 2.2, 2.05, 2, 1.6, 2.45, 1.82, 1.57, 1.82),
+(1457321, '1406653200', '', 1, 'Norway 1', 'Valerenga', 'Stabaek', 'READY', '', 1.43, 4.2, 5.8, 1.68, 2.9, 5.8, 1.6, 3.15, 5.8, 2.7, 2.05, 1.35, 2.05, 1.55, 1.42, 1.72),
+(1457322, '1406665800', '', 1, 'Peru - Apertura', 'Cienciano', 'Alianza Lima', 'READY', '', 2.05, 3, 3.45, 2.8, 2, 3.9, 2.45, 2.3, 3.8, 1.55, 1.85, 2.15, 3.2, 2.35, 1.97, 2.5),
+(1457323, '1406744100', '', 1, 'Peru - Apertura', 'Los Caimanes', 'Cesar Vallejo', 'READY', '', 3.15, 3.15, 2.1, 3.8, 2, 2.85, 3.7, 2.3, 2.5, 1.72, 1.92, 1.9, 2.95, 2.15, 1.77, 2.2),
+(1457324, '1406753100', '', 1, 'Peru - Apertura', 'Cajamarca', 'Juan Aurich', 'READY', '', 2.45, 3.05, 2.65, 3.15, 2.05, 3.3, 2.85, 2.35, 3, 1.75, 1.93, 1.85, 2.85, 2.1, 1.6, 2.05),
+(1457325, '1406768400', '', 1, 'Peru - Apertura', 'Universitario', 'Real Garcilaso', 'READY', '', 1.75, 3.25, 4.3, 2.45, 2.1, 4.4, 2.1, 2.5, 4.3, 1.62, 1.87, 2.05, 3.15, 2.3, 1.97, 2.35),
+(1457329, '1406651400', '', 1, 'Friendly', 'Hannover', 'Red Star', 'READY', '', 1.6, 3.7, 4.6, 1.95, 2.6, 4.7, 1.88, 2.8, 4.5, 2.4, 2, 1.45, 2.2, 1.62, 1.45, 1.7),
+(1457330, '1406651400', '', 1, 'Friendly', 'Zurich', 'Hoffenheim', 'READY', '', 4.3, 3.45, 1.7, 4.2, 2.55, 2.1, 4.1, 2.8, 1.95, 2.25, 2, 1.5, 2.3, 1.73, 1.52, 1.75),
+(1457331, '1406649600', '', 1, 'Friendly', 'Schalke', 'Stoke', 'READY', '', 1.65, 3.6, 4.4, 2.05, 2.55, 4.4, 1.95, 2.8, 4.1, 2.25, 2, 1.5, 2.3, 1.73, 1.52, 1.75),
+(1457332, '1406658600', '', 1, 'Friendly', 'Macclesfield', 'Rochedale', 'READY', '', 3.1, 3.2, 2.1, 3.5, 2.2, 2.7, 3.4, 2.45, 2.45, 1.92, 1.95, 1.7, 2.65, 1.95, 1.6, 1.9),
+(1457333, '1406658600', '', 1, 'Friendly', 'Portsmouth', 'Bournemouth', 'READY', '', 3.35, 3.35, 1.95, 3.5, 2.35, 2.5, 3.5, 2.7, 2.2, 2.15, 2, 1.55, 2.4, 1.77, 1.52, 1.75),
+(1457334, '1406719800', '', 1, 'Singapore S.league', 'Tanjong', 'Home United', 'READY', '', 3.8, 3.45, 1.8, 3.7, 2.5, 2.3, 3.8, 2.7, 2.1, 2.4, 2, 1.45, 2.2, 1.62, 1.45, 1.67),
+(1457337, '1406761200', '', 1, 'Usa - Mls', 'D.C. United', 'Toronto', 'READY', '', 2, 3.35, 3.5, 2.8, 2.15, 3.8, 2.4, 2.5, 3.8, 1.9, 1.98, 1.8, 2.8, 2.1, 1.73, 2.05),
+(1457338, '1406763000', '', 1, 'Usa - Mls', 'New England', 'Colorado', 'READY', '', 2.4, 3.25, 2.8, 3.1, 2.15, 3.4, 2.8, 2.4, 3.2, 2, 2, 1.7, 2.65, 2, 1.55, 1.88),
+(1457339, '1406766600', '', 1, 'Usa - Mls', 'Chicago', 'Vancouver', 'READY', '', 2.25, 3.3, 3, 2.9, 2.2, 3.6, 2.65, 2.45, 3.4, 2.1, 2.05, 1.65, 2.55, 1.92, 1.57, 1.87),
+(1457340, '1406768400', '', 1, 'Usa - Mls', 'Salt Lake', 'New York', 'READY', '', 2.1, 3.35, 3.3, 2.75, 2.25, 3.6, 2.45, 2.65, 3.4, 2.2, 2.05, 1.6, 2.45, 1.87, 1.53, 1.82),
+(1458081, '1406655000', '', 1, 'Friendly', 'Estoril', 'Ferreira', 'READY', '', 1.7, 3.4, 4.4, 2.2, 2.4, 4.2, 1.95, 2.8, 4.1, 2.05, 2, 1.6, 2.45, 1.82, 1.6, 1.87),
+(1458082, '1406635200', '90''', 1, 'Friendly', 'Kitchee', 'PSG', 'LIVE', '', 17, 8.5, 1.07, 16, 4.7, 1.2, 14, 4, 1.27, 5, 3.45, 1.1, 1.47, 1.22, 1.9, 2.1),
+(1458083, '1406638800', '45''', 1, 'Friendly', 'Metalac', 'Zeta', 'LIVE', '', 2.75, 3.1, 2.35, 3.35, 2.05, 3.05, 3.05, 2.4, 2.75, 1.75, 1.93, 1.85, 2.85, 2.1, 1.62, 2.05),
+(1458084, '1406647800', '', 1, 'Friendly', 'Radnicki K.', 'Ufa', 'READY', '', 3.7, 3.35, 1.85, 3.7, 2.3, 2.45, 4, 2.55, 2.15, 1.98, 2, 1.65, 2.55, 1.87, 1.65, 1.9),
+(1458085, '1406649600', '', 1, 'Friendly', 'B93', 'B 1908', 'READY', '', 2.1, 3.3, 3, 2.6, 2.4, 3.25, 2.4, 2.6, 3.25, 2.55, 2.05, 1.4, 2.15, 1.57, 1.35, 1.57),
+(1458086, '1406649600', '', 1, 'Friendly', 'Siofok', 'Veszprem', 'READY', '', 1.3, 4.8, 7.5, 1.5, 3.25, 7.25, 1.48, 3.25, 7.75, 2.95, 2.05, 1.3, 1.9, 1.47, 1.52, 1.82),
+(1458087, '1406653200', '', 1, 'Friendly', 'ADO Den Haag', 'OFI', 'READY', '', 1.35, 4.4, 7, 1.58, 3.05, 6.5, 1.58, 3.05, 6.5, 2.25, 2, 1.5, 2.3, 1.73, 1.67, 2.05),
+(1458088, '1406653200', '', 1, 'Friendly', 'Cambuur', 'Volendam', 'READY', '', 1.65, 3.6, 4.4, 2.05, 2.6, 4.3, 1.93, 2.8, 4.2, 2.4, 2, 1.45, 2.2, 1.62, 1.45, 1.7),
+(1458089, '1406653200', '', 1, 'Friendly', 'Heracles', 'Konyaspor', 'READY', '', 2.45, 3.15, 2.6, 3, 2.2, 3.1, 2.85, 2.4, 2.9, 2.15, 2, 1.55, 2.4, 1.77, 1.4, 1.7),
+(1458090, '1406656800', '', 1, 'Friendly', 'Frickley', 'Scunthorpe', 'READY', '', 8, 5.3, 1.25, 8.5, 3.25, 1.45, 7.75, 3.5, 1.43, 3.2, 2.2, 1.25, 1.8, 1.42, 1.55, 1.85),
+(1458091, '1406657700', '', 1, 'Friendly', 'Exeter', 'Swansea', 'READY', '', 8.5, 5.2, 1.25, 9, 3.1, 1.48, 9, 3.2, 1.45, 2.25, 2, 1.5, 2.3, 1.73, 1.82, 2.15),
+(1458092, '1406658600', '', 1, 'Friendly', 'Newport', 'Coventry', 'READY', '', 2.85, 3.15, 2.25, 3.4, 2.2, 2.8, 3.2, 2.45, 2.6, 1.98, 2, 1.65, 2.55, 1.87, 1.55, 1.85),
+(1458093, '1406658600', '', 1, 'Friendly', 'Notts County', 'Birmingham', 'READY', '', 3.7, 3.35, 1.85, 3.7, 2.3, 2.45, 4, 2.55, 2.15, 1.98, 2, 1.65, 2.55, 1.87, 1.65, 1.9),
+(1458094, '1406658600', '', 1, 'Friendly', 'Stevenage', 'Reading', 'READY', '', 4.1, 3.4, 1.75, 4, 2.35, 2.3, 4.1, 2.65, 2.05, 1.98, 2, 1.65, 2.55, 1.87, 1.65, 1.9),
+(1458095, '1406658600', '', 1, 'Friendly', 'Alfreton', 'Rotherham', 'READY', '', 5.2, 3.7, 1.55, 5, 2.65, 1.88, 4.7, 2.85, 1.83, 2.15, 2, 1.55, 2.4, 1.77, 1.6, 1.85),
+(1458096, '1406658600', '', 1, 'Friendly', 'Burton', 'Derby', 'READY', '', 4.7, 3.45, 1.65, 4.3, 2.5, 2.1, 4.4, 2.7, 1.95, 1.98, 2, 1.65, 2.55, 1.87, 1.65, 1.95),
+(1458097, '1406658600', '', 1, 'Friendly', 'Dover Athletic', 'Gillingham', 'READY', '', 4.4, 3.4, 1.7, 4.2, 2.55, 2.1, 4.1, 2.8, 1.95, 2.15, 2, 1.55, 2.4, 1.77, 1.55, 1.82),
+(1458098, '1406658600', '', 1, 'Friendly', 'Lincoln', 'Mansfield', 'READY', '', 2.85, 3.15, 2.25, 3.4, 2.15, 2.85, 3.2, 2.4, 2.6, 1.85, 1.93, 1.75, 2.7, 2, 1.6, 1.92),
+(1458099, '1406659500', '', 1, 'Friendly', 'Brentford', 'Osasuna', 'READY', '', 2.25, 3.15, 2.85, 2.8, 2.2, 3.4, 2.6, 2.45, 3.2, 1.98, 2, 1.65, 2.55, 1.87, 1.55, 1.85),
+(1458100, '1406659500', '', 1, 'Friendly', 'Oxford', 'Wolverhampton', 'READY', '', 3.5, 3.35, 1.9, 3.6, 2.4, 2.4, 3.5, 2.7, 2.2, 2.15, 2, 1.55, 2.4, 1.77, 1.52, 1.77),
+(1458101, '1406659500', '', 1, 'Friendly', 'Sheffield Utd', 'Huddersfield', 'READY', '', 2.65, 3.15, 2.4, 3.2, 2.15, 3.05, 2.95, 2.4, 2.8, 2.05, 2, 1.6, 2.45, 1.82, 1.45, 1.77),
+(1458102, '1406659500', '', 1, 'Friendly', 'Southend', 'Ipswich', 'READY', '', 3.7, 3.35, 1.85, 3.7, 2.3, 2.45, 3.8, 2.7, 2.1, 2.05, 2, 1.6, 2.45, 1.82, 1.6, 1.85),
+(1458103, '1406659500', '', 1, 'Friendly', 'Swindon', 'Leeds', 'READY', '', 3, 3.2, 2.15, 3.5, 2.2, 2.7, 3.2, 2.55, 2.45, 2.05, 2, 1.6, 2.45, 1.82, 1.5, 1.8),
+(1458104, '1406659500', '', 1, 'Friendly', 'Cheltenham', 'Bristol City', 'READY', '', 3.4, 3.25, 1.95, 3.7, 2.25, 2.55, 3.7, 2.5, 2.3, 1.92, 1.95, 1.7, 2.65, 1.95, 1.65, 1.9),
+(1458105, '1406659500', '', 1, 'Friendly', 'Altrincham', 'Accrington', 'READY', '', 3.5, 3.35, 1.9, 3.7, 2.3, 2.5, 3.5, 2.7, 2.2, 2.05, 2, 1.6, 2.45, 1.82, 1.57, 1.82),
+(1458106, '1406659500', '', 1, 'Friendly', 'Cambridge', 'Milton Keynes Dons', 'READY', '', 3.45, 3.25, 1.95, 3.8, 2.1, 2.7, 3.7, 2.5, 2.3, 1.8, 1.93, 1.8, 2.8, 2.05, 1.72, 2),
+(1458107, '1406659500', '', 1, 'Friendly', 'Kidderminster', 'Shrewsbury', 'READY', '', 3.2, 3.25, 2.05, 3.5, 2.25, 2.65, 3.5, 2.45, 2.4, 1.98, 2, 1.65, 2.55, 1.87, 1.6, 1.85),
+(1458108, '1406659500', '', 1, 'Friendly', 'Leyton', 'QPR', 'READY', '', 3.4, 3.3, 1.95, 3.5, 2.3, 2.55, 3.7, 2.5, 2.3, 1.98, 2, 1.65, 2.55, 1.87, 1.6, 1.87),
+(1458109, '1406659500', '', 1, 'Friendly', 'Luton', 'Colchester', 'READY', '', 2.1, 3.25, 3.05, 2.65, 2.3, 3.4, 2.4, 2.55, 3.3, 2.15, 2, 1.55, 2.4, 1.77, 1.47, 1.75),
+(1458110, '1406659500', '', 1, 'Friendly', 'Preston', 'Burnley', 'READY', '', 3.1, 3.2, 2.1, 3.5, 2.2, 2.7, 3.4, 2.45, 2.45, 1.98, 2, 1.65, 2.55, 1.87, 1.55, 1.85),
+(1458111, '1406660400', '', 1, 'Friendly', 'Sunderland', 'Recreativo', 'READY', '', 1.85, 3.35, 3.7, 2.45, 2.3, 3.7, 2.1, 2.7, 3.8, 2.05, 2, 1.6, 2.45, 1.82, 1.6, 1.85);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `playedmatches`
+--
+
+CREATE TABLE `playedmatches` (
+  `userid` int(11) NOT NULL,
+  `ticketid` int(11) NOT NULL,
+  `matchid` int(11) NOT NULL,
+  `home` varchar(150) NOT NULL,
+  `away` varchar(150) NOT NULL,
+  `odd` double NOT NULL,
+  `win` int(11) NOT NULL,
+  `processed` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `playedtips`
+--
+
+CREATE TABLE `playedtips` (
+  `matchid` int(11) NOT NULL,
+  `tip` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `testid`
 --
 
-CREATE TABLE IF NOT EXISTS `testid` (
+CREATE TABLE `testid` (
   `id` int(11) NOT NULL,
   `home` varchar(150) NOT NULL,
   `away` varchar(150) NOT NULL,
-  `time` varchar(30) NOT NULL,
-  UNIQUE KEY `id` (`id`)
+  `time` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -1436,38 +1460,48 @@ INSERT INTO `testid` (`id`, `home`, `away`, `time`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tickets`
+--
+
+CREATE TABLE `tickets` (
+  `userid` int(11) NOT NULL,
+  `ticket` text NOT NULL,
+  `time` int(11) NOT NULL,
+  `win` int(11) NOT NULL,
+  `processed` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(64) NOT NULL,
   `salt` varchar(32) NOT NULL,
   `email` varchar(50) NOT NULL,
   `date` datetime NOT NULL,
+  `timezone` varchar(50) NOT NULL,
   `group` int(11) NOT NULL,
-  `played` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `scored` smallint(5) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+  `played` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `scored` smallint(5) UNSIGNED NOT NULL DEFAULT '0',
+  `win` int(11) NOT NULL DEFAULT '0',
+  `processed` int(11) NOT NULL DEFAULT '0',
+  `money` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `salt`, `email`, `date`, `group`, `played`, `scored`) VALUES
-(1, 'Nightwhistle', '001fac502adb434a6bb8123031d23cf6ea4d578264115922c9d4e591261acf0c', 'èà¹¤{êN &<\r“¹xÐºû%p§IçÂ¡LjŸ\\', 'ark@g.c', '2014-06-24 09:59:17', 3, 11, 8),
-(2, 'second', '', '', '', '0000-00-00 00:00:00', 0, 0, 0),
-(3, 'third', '', '', '', '0000-00-00 00:00:00', 0, 0, 0),
-(4, 'test1', '', '', '', '0000-00-00 00:00:00', 0, 0, 0),
-(5, 'test1', '', '', '', '0000-00-00 00:00:00', 0, 0, 0),
-(6, 'test1', '', '', '', '0000-00-00 00:00:00', 0, 0, 0),
-(7, 'test1', '', '', '', '0000-00-00 00:00:00', 0, 0, 0),
-(8, 'Nightwhistle2', '85276395ea638cc78add309c01513b54d08072dc6910ef652b0c7399c8155ac5', 'ÜßõÚ)ù%Œ9"¿óŒ+J1ÈNÊ’S''ƒW‡·û@Ñ', 'a@g.c', '2014-06-25 14:29:45', 1, 6, 1),
-(9, 'Hollow', '5e31bcd4fe4216220e8090dc11e5f83a6b6d6743c979ab5b4506c94007eb782f', '6*dÑM±ŸËûÏnðrX¯æ£\\Š˜«1b ', 'igorholovcuk89@gmail.com', '2014-06-25 15:42:13', 1, 0, 0),
-(10, 'Nightwhistle4', '0303d2052e99f55169a4aeb54dcbadc4af35051de8c5c3c0592e3569c52c106a', '®dèÒzƒOZáµB9XŽÚ”\0wÎ]^ízXÙn', 'a@g.com', '2014-07-05 08:53:57', 1, 0, 0),
-(11, 'Nightwhistle3', '89827ced53bd770c67cd82810f92cb019742d4ba96e61859ebe09739e3b2b79f', 'k;ÿ0;g¯Tº£Ž=˜Ï 3ÎŠò!–ÔàK‹œ²É$Ý', 'a@f.c', '2014-07-05 08:54:06', 1, 0, 0);
+INSERT INTO `users` (`id`, `username`, `password`, `salt`, `email`, `date`, `timezone`, `group`, `played`, `scored`, `win`, `processed`, `money`) VALUES
+(8, 'Nightwhistle2', '85276395ea638cc78add309c01513b54d08072dc6910ef652b0c7399c8155ac5', 'ÜßõÚ)ù%Œ9"¿óŒ+J1ÈNÊ’S''ƒW‡·û@Ñ', 'a@g.c', '2014-06-25 14:29:45', '', 1, 6, 1, 0, 0, 0),
+(9, 'Hollow', '5e31bcd4fe4216220e8090dc11e5f83a6b6d6743c979ab5b4506c94007eb782f', '6*dÑM±ŸËûÏnðrX¯æ£\\Š˜«1b ', 'igorholovcuk89@gmail.com', '2014-06-25 15:42:13', '', 1, 0, 0, 0, 0, 0),
+(10, 'Nightwhistle4', '0303d2052e99f55169a4aeb54dcbadc4af35051de8c5c3c0592e3569c52c106a', '®dèÒzƒOZáµB9XŽÚ”\0wÎ]^ízXÙn', 'a@g.com', '2014-07-05 08:53:57', '', 1, 0, 0, 0, 0, 0),
+(11, 'Nightwhistle3', '89827ced53bd770c67cd82810f92cb019742d4ba96e61859ebe09739e3b2b79f', 'k;ÿ0;g¯Tº£Ž=˜Ï 3ÎŠò!–ÔàK‹œ²É$Ý', 'a@f.c', '2014-07-05 08:54:06', '', 1, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1475,12 +1509,11 @@ INSERT INTO `users` (`id`, `username`, `password`, `salt`, `email`, `date`, `gro
 -- Table structure for table `users_session`
 --
 
-CREATE TABLE IF NOT EXISTS `users_session` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users_session` (
+  `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `hash` varchar(64) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+  `hash` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users_session`
@@ -1495,15 +1528,14 @@ INSERT INTO `users_session` (`id`, `user_id`, `hash`) VALUES
 -- Table structure for table `users_tips`
 --
 
-CREATE TABLE IF NOT EXISTS `users_tips` (
+CREATE TABLE `users_tips` (
   `userid` int(11) NOT NULL,
   `matchid` int(11) NOT NULL,
   `tip` varchar(5) NOT NULL,
   `time` varchar(13) NOT NULL,
   `tipid` varchar(23) NOT NULL,
-  `processed` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `fixtures` smallint(5) unsigned NOT NULL DEFAULT '0',
-  UNIQUE KEY `tipid` (`tipid`)
+  `processed` tinyint(3) UNSIGNED NOT NULL DEFAULT '0',
+  `fixtures` smallint(5) UNSIGNED NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -1515,6 +1547,77 @@ INSERT INTO `users_tips` (`userid`, `matchid`, `tip`, `time`, `tipid`, `processe
 (1, 1450276, 'FH1', '1406149064', '1_1450276', 0, 0),
 (1, 1452449, '3p', '1406149070', '1_1452449', 0, 0);
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `finishedmatches`
+--
+ALTER TABLE `finishedmatches`
+  ADD UNIQUE KEY `matchid` (`matchid`);
+
+--
+-- Indexes for table `fixturesplay`
+--
+ALTER TABLE `fixturesplay`
+  ADD UNIQUE KEY `matchid` (`matchid`);
+
+--
+-- Indexes for table `groups`
+--
+ALTER TABLE `groups`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `matches`
+--
+ALTER TABLE `matches`
+  ADD UNIQUE KEY `matchid` (`id`);
+
+--
+-- Indexes for table `testid`
+--
+ALTER TABLE `testid`
+  ADD UNIQUE KEY `id` (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users_session`
+--
+ALTER TABLE `users_session`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users_tips`
+--
+ALTER TABLE `users_tips`
+  ADD UNIQUE KEY `tipid` (`tipid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `groups`
+--
+ALTER TABLE `groups`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `users_session`
+--
+ALTER TABLE `users_session`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

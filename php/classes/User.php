@@ -97,16 +97,15 @@ class User {
     private function processRegister() {
         if (!empty($this->error)) return false;
         $timezone = $this->detectUserTimeZone();
-        
+    //    $timezone = "Timezone not working localy";  //OVERRIDE FOR LOCALHOST
         try {
             $statement = $this->db->prepare("INSERT INTO users (username, password, email, timezone)
                                                         values (:username, :password, :email, :timezone)");
             $statement->bindParam(':username', $this->username);
             $statement->bindParam(':password', $this->password);
             $statement->bindParam(':email', $this->email);
-            $statement->bindParam(':timezone', $this->timezone);
+            $statement->bindParam(':timezoe', $this->timezone);
             $statement->execute();
-            echo "fine!";
         } catch(PDOException $e) {
             echo "$e";
         }
@@ -253,10 +252,5 @@ class User {
         }
         $this->email = $email;
     }
-    
-    
-    
-    
-
 
 }
