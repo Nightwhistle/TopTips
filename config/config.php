@@ -1,7 +1,7 @@
 <?php
 
-define('SERVER_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/Login');
-define('TICKETS_SCREENSHOT_FOLDER', $_SERVER['DOCUMENT_ROOT'] . '/Login/img/tickets/');
+define('SERVER_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/TopTips');
+define('TICKETS_SCREENSHOT_FOLDER', $_SERVER['DOCUMENT_ROOT'] . 'TopTips/img/tickets/');
 
 define('DB_HOST', 'localhost');
 define('DB_DATABASE', 'login');
